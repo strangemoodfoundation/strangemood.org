@@ -1,8 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/styles.css";
+import type { AppProps } from "next/app";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+      <Script
+        src="https://adapt.strangemood.org/script.js"
+        data-site="PKBWBTZD"
+        defer
+      />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
