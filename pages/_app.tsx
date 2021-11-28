@@ -1,10 +1,12 @@
 import "../styles/styles.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>Strangemood</Head>
       <Component {...pageProps} />
       <Script
         src="https://adapt.strangemood.org/script.js"
