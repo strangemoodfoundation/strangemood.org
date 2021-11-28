@@ -6,7 +6,9 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>Strangemood</Head>
+      <Head>
+        <title>Strangemood</title>
+      </Head>
       <Component {...pageProps} />
       <Script
         src="https://adapt.strangemood.org/script.js"
