@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           </svg>
         </a>
       </nav>
-      <article className="max-w-xl m-auto pt-16 pb-24">
+      <article className="px-4 max-w-xl m-auto pt-16 pb-24">
         <h1 className="text-left text-xl font-bold mb-2">
           It's like Steam, but as a co-op
         </h1>
