@@ -8,7 +8,7 @@ const Home: NextPage = () => {
           <span>☼</span> Strangemood <span>☼</span>
         </span>
         <a
-          href="https://discord.gg/unRFEBpf"
+          href="https://discord.gg/Y2R3VBcRmA"
           className="border-2 font-mono px-4 mt-4 flex justify-between items-center p-2 max-w-sm border-gray-900 rounded-sm bg-blue-100 hover:bg-blue-200  cursor-pointer"
         >
           Join the Discord{" "}
