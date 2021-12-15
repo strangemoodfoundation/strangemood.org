@@ -9,3 +9,48 @@ article p {
 article a {
   @apply text-blue-500 underline;
 }
+
+html,
+body {
+  font: 16px/1.6 "Helvetica";
+}
+
+h1 {
+  font-size: 2.44em;
+  line-height: 1.33em;
+  padding-top: 0.333em;
+  margin-bottom: 0.333em;
+  @apply text-xl font-bold;
+}
+
+h2 {
+  font-size: 1.94em;
+  line-height: 1.68em;
+  padding-top: 0.484em;
+  margin-bottom: 0.355em;
+  @apply text-lg font-bold;
+}
+
+h3 {
+  font-size: 1.56em;
+  line-height: 1.04em;
+  padding-top: 0.2em;
+  margin-bottom: 0.84em;
+  @apply text-base font-bold;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.3em;
+  padding-top: 0.3em;
+  margin-bottom: 1em;
+  @apply text-sm;
+}
+
+p,
+pre {
+  font-size: 1em;
+  line-height: 1.63em;
+  padding-top: 0.5em;
+  margin-bottom: 1.13em;
+}

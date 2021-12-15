@@ -35,9 +35,7 @@ const Home: NextPage = () => {
         </a>
       </nav>
       <article className="px-4 max-w-xl m-auto pt-16 pb-24">
-        <h1 className="text-left text-xl font-bold mb-2">
-          It's like Steam, but as a co-op
-        </h1>
+        <h1 className="text-left">It's like Steam, but as a co-op</h1>
         <p>
           Strangemood is protocol for buying and selling games on the internet.
           5% of every transaction goes to a community treasury. Votes that
@@ -46,9 +44,7 @@ const Home: NextPage = () => {
 
         <p>In other words, it's like Steam, if Steam was a co-op.</p>
 
-        <h1 className="text-left text-xl font-bold mt-8 mb-2">
-          Wait, it's a protocol?
-        </h1>
+        <h1 className="text-left mt-6">Wait, it's a protocol?</h1>
         <p>
           Yeah, like Email or RSS. No one <i>owns</i> Email and no-one owns
           Strangemood. That means anyone can have their <i>own</i> games store,
@@ -63,9 +59,7 @@ const Home: NextPage = () => {
           store, a back-office tool, engine plugin, or game library.{" "}
         </p>
 
-        <h1 className="text-left text-xl font-bold mt-8 mb-2">
-          How does it work?
-        </h1>
+        <h1 className="text-left mt-6">How does it work?</h1>
         <p>
           Strangemood is built on Solana; an environmentally friendly blockchain
           with fees less than a penny. A transaction uses 3.8 million times less
