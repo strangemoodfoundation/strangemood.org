@@ -6,13 +6,16 @@ article p {
   @apply mb-2;
 }
 
-article a {
+article a:not(.clear) {
   @apply text-blue-500 underline;
 }
 
 html,
-body {
+body,
+#__next {
   font: 16px/1.6 "Helvetica";
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
