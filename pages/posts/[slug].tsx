@@ -6,6 +6,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
+import Layout from "../../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
@@ -23,23 +24,16 @@ const components = {
 
 export default function PostPage({ source, frontMatter }: any) {
   return (
-    <div>
-      <header>
-        <nav>
-          {/* <Link href="/">
-            <a>👈 Go back home</a>
-          </Link> */}
-        </nav>
-      </header>
+    <Layout>
       <div>
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && <p>{frontMatter.description}</p>}
       </div>
 
-      <article className="max-w-2xl m-auto">
+      <article className="max-w-3xl m-auto px-4 mt-12 mb-12">
         <MDXRemote {...source} components={components} />
       </article>
-    </div>
+    </Layout>
   );
 }
 
