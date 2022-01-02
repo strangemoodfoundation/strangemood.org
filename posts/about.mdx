@@ -32,27 +32,39 @@ Well how would _you_ make a community treasury that's controlled by potentially 
 
 Strangemood isn't "Steam but Blockchain", blockchains are just the only reasonable way to do this. If you've got a better way of cutting out the middleman, please go start that!
 
-## Why Solana?
+## What about storage?
 
-It's fast, environmentally efficient, and it works right now. It's fairly simple to build a bridge to other chains, so Strangemood can be accessed from _any_ chain. It doesn't matter which chain the data lives on. If for some reason _it does_ matter, then we'll just migrate onto that chain.
+Strangemood is "storage-agnostic". In other words, it doesn't matter where the user gets the game _from_, the protocol only handles the licensing and sale part.
+
+The game developer can distribute the game themselves if they'd like, though we recommend using [IPFS](https://ipfs.io/). We're going to run an "at-cost" [IPFS pinning service](https://docs.ipfs.io/concepts/persistence/), paid for by the co-op, that keeps games around.
 
 ## What's the environmental impact of Strangemood?
 
 About the same as this website. In other words, almost nothing. A single transaction on the Solana blockchain [uses about as much energy as a google search.](https://solana.com/news/solana-energy-usage-report-november-2021)
 
-If you, like us, care about climate change, we'd recommend you offset your personal emissions with a service like [wren.co](https://www.wren.co/), encourage your local leaders to support car-free alternatives (like bike lanes, busses, trains, and walkable neighborhoods), encourage your college-aged friends to go into STEM fields to investigate alternatives to steel and cement, support the space industry's attempts to do off-planet manufacturing and mining if it turns out steel and cement alternatives are a no-go, and if you live in Arkansas, Mississippi, North Dakota, South Dakota, Wyoming or Montana, call your representative in support of cultivated meat and seafood. If you live in the US, your town likely bans climate-friendly housing; consider joining movements like [YIMBY action](https://yimbyaction.org/) in making it legal to build cheap, low carbon-footprint buildings. When you get the opportunity, pick the veggie option, the electric heater, the denser neighborhood, or the elected representative that values being a good ancestor.
+## What can I do about climate change broadly?
+
+Well, this is a weird place to ask, but sure, I'll bite.
+
+If you, like us, care about climate change, we'd recommend you offset your personal emissions with a service like [wren.co](https://www.wren.co/), encourage your local leaders to support car-free alternatives (like bike lanes, busses, trains, and walkable neighborhoods), encourage your college-aged friends to go into STEM fields to investigate alternatives to steel and cement, support the space industry's attempts to do off-planet manufacturing and mining if it turns out steel and cement alternatives are a no-go, and if you live in Arkansas, Mississippi, North Dakota, South Dakota, Wyoming or Montana, call your representative in support of cultivated meat and seafood. If you live in the US, your town likely bans climate-friendly housing; consider joining movements like [YIMBY action](https://yimbyaction.org/) in making it legal to build cheap, low carbon-footprint buildings and neighborhoods. When you get the opportunity, pick the veggie option, the electric heater, the denser neighborhood, or the elected representative that values being a good ancestor.
+
+## Why Solana?
+
+It's fast, environmentally efficient, and it works right now. It's fairly simple to build a bridge to other chains, so Strangemood can be accessed from _any_ chain. It doesn't matter which chain the data lives on. If for some reason _it does_ matter, then we'll just migrate onto that chain.
+
+## Will Strangemood work with Ethereum wallets?
+
+Sure. We'd need to setup a bridge, but that's not that hard.
+
+## Do I have to buy the games in SOL?
+
+No, you can buy the game with any currency, and the client can swap between your currency and SOL in the transaction using protocols like [Serum swap.](https://github.com/project-serum/swap) You can buy Strangemood games with ETH if you want. You can get from a fiat currency (like dollars) to crypto with a service like [Ramp Network](https://ramp.network). You'd still need a wallet, but that wallet just becomes your game library.
 
 ## Why do you keep saying "co-op"? Isn't this a DAO?
 
 Yeah sure, but can _you_ explain what a DAO is to your parents? Look, more people have heard of co-ops than have heard of DAOs. NPR thinks DAOs are "investment vehicles" that are literally pronounced "D-A-O". If you're outside of crypto, you only see the ponzi schemes and Bitcoin's energy usage. Most people hear about crypto from a screenshot of a Twitter post on Instagram that tells them why "NFTs are bad for the environment", or from their weird cousin who whips out his Rainbow wallet at Thanksgiving to show you some pixel art.
 
 Strangemood isn't a crypto project. It's just a co-op. Lots of people know what co-ops are. Let's hold hands and make a cyberpunk co-op.
-
-## What about storage?
-
-Strangemood is "storage-agnostic". In other words, it doesn't matter where the user gets the game _from_, the protocol only handles the licensing and sale part.
-
-The game developer can distribute the game themselves if they'd like, though we recommend using [IPFS](https://ipfs.io/). We're going to run an "at-cost" [IPFS pinning service](https://docs.ipfs.io/concepts/persistence/), paid for by the co-op, that keeps games around.
 
 ## Is this "games as NFTs"?
 
@@ -66,9 +78,13 @@ Not unless the game developer lets you.
 
 ## Is this "Steam for pay to earn games"?
 
-No, it's a marketplace to buy and sell games. You can put a pay to earn game on the Strangemood protocol, probably no one will stop you. But it's not explicitly for any type of game.
+No, it's a marketplace to buy and sell games. You can put a pay to earn game on the Strangemood protocol, it's unlikely anyone will stop you. But Strangemood isn't explicitly for any type of game.
 
 Actually, Strangemood isn't even necessarily for games. It's a decentralized app store. But Apple and Google are picky about you creating another store on their devices, and so most software licenses are for video games.
+
+## What about browser games?
+
+Sure, you can list a browser game on Strangemood.
 
 ## What do you mean by "anyone can create a store?"
 
@@ -121,6 +137,18 @@ Strangemood is made by the Rebase Foundation, which _is_ a company (sort of). I 
 A lot of folks are trying to automate away the worker; the Rebase Foundation automates away the owner. We spin up competitors to existing companies as automated co-ops & protocols, and split it between the customer, the worker, and the vendors. That makes prices go down and wages go up, making everyone richer.
 
 We're pretty sure this is the point of crypto and anyone who's not trying to do this has their head on backwards. If you're into increasing prosperity for more people, like thinking about incentives, and have a properly aligned head, come join us.
+
+## Does Strangemood make a profit?
+
+No. Strangemood is a protocol. If you and your friends got together to plan a party, and you wrote down all the things you'd need to get at the store on a piece of paper, did the piece of paper make a profit?
+
+The money in Strangemood flows to game developers and folks that build the ecosystem that supports Strangemood.
+
+This is hard for people to wrap their brain around, because it's the really the "new thing" that blockchains provide: escrows without a third party.
+
+When you buy a game on Steam, you're buying from Steam. Steam takes the money, holds the cash and the game in a sort of "escrow", and then it gives some money to the game developer and gives you the game. But when you buy a game on Strangemood, you're buying from _the game developer_. A little bit of money is also going to the storage provider, the folks that make the website, and all the other "expenses" that are needed to run the network. But you're also paying those people _directly_.
+
+Strangemood is just a set of agreed-upon rules on who gets paid for what.
 
 ## If Strangemood doesn't make a profit, then why create Strangemood, what's in it for Rebase?
 
