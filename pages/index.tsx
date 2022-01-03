@@ -48,8 +48,8 @@ const Home: NextPage = () => {
             internet. 5% of every transaction goes to a community treasury.
             Votes that control that treasury are distributed to game developers
             as they sell. Game developers can even vote to change that
-            contribution rate. In other words, it's like Steam, if Steam was a
-            co-op.
+            contribution rate, even to 0% if they want. In other words, it's
+            like Steam, if Steam was a co-op.
           </p>
           <div className="mt-8 flex">
             <PrimaryLink href="https://demo.strangemood.org">
