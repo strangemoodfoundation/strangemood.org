@@ -86,6 +86,9 @@ await purchaseListing(program, /* ... */);
 `}</pre>
 
           <div className="mt-8">
+            <PrimaryLink href="https://docs.strangemood.org" className="mr-2">
+              Read the docs [in-dev]
+            </PrimaryLink>
             <MinorLink href="https://github.com/strangemoodfoundation/strangemood">
               Contribute on Github
             </MinorLink>

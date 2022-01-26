@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Strangemood </title>
+        <title>Strangemood | a decentralized game store</title>
       </Head>
       <Component {...pageProps} />
       <Script

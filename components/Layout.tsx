@@ -4,20 +4,27 @@ export default function Layout(props: { children: any }) {
   return (
     <div>
       <div className="border-b">
-        <nav className="px-4 pt-4 pb-4 mx-auto max-w-3xl flex flex-flex items-center justify-between">
+        <nav className="px-4 pt-4 gap-1 pb-4 mx-auto max-w-3xl flex flex-flex items-center justify-between">
           <Link href="/">
             <a className="font-bold hover:opacity-50 text-center sm:text-lg text-sm m-0 p-0">
               Strangemood
             </a>
           </Link>
 
-          <div className="flex gap-1 items-center">
+          <div className="flex gap-2 items-center">
+            <a
+              href="https://docs.strangemood.org"
+              className="underline hover:opacity-50  sm:text-base text-sm"
+            >
+              docs
+            </a>
             <a
               href="/posts/about"
               className="underline hover:opacity-50  sm:text-base text-sm"
             >
               about
             </a>
+
             <a
               target={"_blank"}
               href="https://twitter.com/strangemoodorg"

@@ -4,7 +4,6 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
 import Head from "next/head";
-import Link from "next/link";
 import path from "path";
 import Layout from "../../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
