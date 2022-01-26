@@ -174,30 +174,3 @@ In the past, a protocol has no way of competing, because the protocol doesn't ha
 Well, to some extent you just gotta pick a number to start with. Because the number is controllable by the co-op, it doesn't really matter what number you start with. If it's too high or two low, the co-op has the power to fix it. But we tried to pick something that was low enough that it was competitive with other marketplaces, and high enough that it could pay for unknown expenses.
 
 As the marketplace gets bigger, it's likely that the contribution rate will get pushed down quite significantly.
-
-## Can you give me the a quick TL;DR of how the protocol works?
-
-Strangemood is a program on the Solana blockchain. That program has "instructions". Let's just talk about two of them.
-
-**InitListing** lets you create something for sale. You give it a price, an address of where you'd like the money to go, an address of where you'd like to get votes in the co-op when someone buys your listing, an address of the co-op that the listing belongs to.
-
-```js
-// This is a simplified version, the real one takes a few more things.
-InitListing(
-  price, // A amount of SOL, Solana's native cryptocurrency
-  sol_deposit, // A public key
-  vote_deposit, // A public key
-  co_op // A public key
-);
-```
-
-**PurchaseListing** lets you buy a pre-existing listing. When this happens, the original lister gets minted votes in the protocol itself, proportional to the sale price.
-
-```js
-PurchaseListing(
-  listing, // A public key of the listing
-  token_account_to_purchase_with // the SOL to hand over
-);
-```
-
-When you purchase a listing, you receive a token that represents the game. But since this is a software license, the game developer can decide to "freeze" that token immediately, making it a non-tranferable token. Games can validate that the user owns that token, but can be ensured that they actually purchased it.
