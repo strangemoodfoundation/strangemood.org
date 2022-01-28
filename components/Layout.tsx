@@ -71,7 +71,16 @@ export default function Layout(props: { children: any }) {
       {props.children}
       <div className="bg-gray-50 border-t border-gray-200">
         <div className="py-4 px-4 max-w-3xl m-auto text-center text-gray-500">
-          <div>Strangemood is an unaudited protocol. Use at your own risk.</div>
+          <div className="pb-4 text-center">
+            Strangemood is an unaudited protocol. Use at your own risk.
+          </div>
+          <hr className="pb-4 flex" />
+          <a
+            href="https://github.com/strangemoodfoundation/www"
+            className="underline"
+          >
+            Edit this website
+          </a>
         </div>
       </div>
     </div>
