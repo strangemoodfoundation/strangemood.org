@@ -1,6 +1,17 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Layout(props: { children: any }) {
+  // This is a trick to make contact info available only
+  // if javascript has loaded, which prevents scrapers
+  // from bombarding the email.
+  const [showContact, setShowContact] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowContact(true);
+    }, 100);
+  }, []);
+
   return (
     <div>
       <div className="border-b">
@@ -70,17 +81,30 @@ export default function Layout(props: { children: any }) {
       </div>
       {props.children}
       <div className="bg-gray-50 border-t border-gray-200">
-        <div className="py-4 px-4 max-w-3xl m-auto text-center text-gray-500">
-          <div className="pb-4 text-center">
+        <div className="py-4 px-4 max-w-3xl m-auto w-full justify-between text-center text-gray-500">
+          <div className="pb-4 w-full justify-between flex">
             Strangemood is an unaudited protocol. Use at your own risk.
           </div>
           <hr className="pb-4 flex" />
-          <a
-            href="https://github.com/strangemoodfoundation/www"
-            className="underline"
-          >
-            Edit this website
-          </a>
+          <div className="flex w-full justify-between">
+            <a
+              href="https://github.com/strangemoodfoundation/www"
+              className="underline"
+            >
+              Edit this website
+            </a>
+
+            <a
+              href={
+                showContact
+                  ? "mailto:hello@strangemood.org"
+                  : "mailto:scrapers@strangemood.org"
+              }
+              className="underline"
+            >
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </div>
