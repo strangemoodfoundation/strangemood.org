@@ -23,12 +23,12 @@ export default function Layout(props: { children: any }) {
           </Link>
 
           <div className="flex gap-2 items-center">
-            <a
+            {/* <a
               href="https://docs.strangemood.org"
               className="underline hover:opacity-50  sm:text-base text-sm"
             >
               docs
-            </a>
+            </a> */}
             <a
               href="/posts/about"
               className="underline hover:opacity-50  sm:text-base text-sm"

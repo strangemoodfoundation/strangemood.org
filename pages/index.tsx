@@ -52,9 +52,9 @@ const Home: NextPage = () => {
             like Steam, if Steam was a co-op.
           </p>
           <div className="mt-8 flex">
-            <PrimaryLink href="https://demo.strangemood.org">
+            {/* <PrimaryLink href="https://demo.strangemood.org">
               Play with the demo
-            </PrimaryLink>
+            </PrimaryLink> */}
             <MinorLink className="ml-2" href="/posts/about">
               Read the FAQ
             </MinorLink>
@@ -86,9 +86,9 @@ await purchaseListing(program, /* ... */);
 `}</pre>
 
           <div className="mt-8">
-            <PrimaryLink href="https://docs.strangemood.org" className="mr-2">
+            {/* <PrimaryLink href="https://docs.strangemood.org" className="mr-2">
               Read the docs [in-dev]
-            </PrimaryLink>
+            </PrimaryLink> */}
             <MinorLink href="https://github.com/strangemoodfoundation/strangemood">
               Contribute on Github
             </MinorLink>
