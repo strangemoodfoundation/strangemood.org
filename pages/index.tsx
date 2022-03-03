@@ -45,7 +45,7 @@ const Home: NextPage = () => {
           <h1 className="text-left">It's like Steam, but as a co-op</h1>
           <p>
             Strangemood is a protocol for buying and selling games on the
-            internet. 5% of every transaction goes to a community treasury.
+            internet. 1% of every transaction goes to a community treasury.
             Votes that control that treasury are distributed to game developers
             as they sell. Game developers can even vote to change that
             contribution rate, even to 0% if they want. In other words, it's
