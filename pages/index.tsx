@@ -55,7 +55,7 @@ const Home: NextPage = () => {
             {/* <PrimaryLink href="https://demo.strangemood.org">
               Play with the demo
             </PrimaryLink> */}
-            <MinorLink className="ml-2" href="/posts/about">
+            <MinorLink className="ml-0" href="/posts/about">
               Read the FAQ
             </MinorLink>
           </div>
