@@ -17,12 +17,12 @@ const components = {
   Head,
 };
 
-function Post({ source, frontMatter }: any) {
+function Post({ source, frontMatter, slug }: any) {
   return (
     <div className="flex-1 flex h-full ">
       <section className="max-w-3xl flex-col flex flex-1 h-full m-auto px-4 mb-4">
         <div>
-          <h2>{frontMatter.question}</h2>
+          <h2 id={slug}>{frontMatter.question}</h2>
         </div>
 
         <MDXRemote {...source} components={components} />
@@ -76,12 +76,13 @@ export default function Index(props: {
                 >
                   <div className="font-bold mt-4">{category}</div>
                   {group.map((post) => (
-                    <div
+                    <a
                       key={"side" + post.slug}
-                      className="ml-2 flex mt-1 opacity-80"
+                      className="transition-all ml-2 flex mt-1 opacity-80 underline hover:opacity-100"
+                      href={`#${post.slug}`}
                     >
                       {post.frontMatter.question}
-                    </div>
+                    </a>
                   ))}
                 </div>
               );
