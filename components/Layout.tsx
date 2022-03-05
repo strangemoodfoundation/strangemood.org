@@ -13,7 +13,7 @@ export default function Layout(props: { children: any }) {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col h-full w-full">
       <div className="border-b">
         <nav className="px-4 pt-4 gap-1 pb-4 mx-auto max-w-3xl flex flex-flex items-center justify-between">
           <Link href="/">
