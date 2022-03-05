@@ -126,9 +126,10 @@ export default function Index(props: {
                   <div className="h-0.5 bg-gray-100 w-full ml-2" />
                 </div>
               </h1>
-              <div className="border-b-4 pt-4 " key={category}>
+              <div className="pt-4 " key={category}>
                 {groupDivs}
               </div>
+              <div className="h-12 bg-black" />
             </div>
           );
         })}
