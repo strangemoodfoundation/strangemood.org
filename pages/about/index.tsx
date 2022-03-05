@@ -142,6 +142,10 @@ export default function Index(props: {
                   </div>
                 ));
 
+              if (groupDivs.length === 0) {
+                return null;
+              }
+
               return (
                 <div key={"outer" + category}>
                   <h1 className=" border-t py-2 pt-12 w-full uppercase font-mono flex flex-1 justify-start text-sm">
@@ -153,7 +157,6 @@ export default function Index(props: {
                   <div className="pt-4 " key={category}>
                     {groupDivs}
                   </div>
-                  <div className="h-12 bg-black" />
                 </div>
               );
             })}
