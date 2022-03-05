@@ -145,7 +145,6 @@ export default function Index(props: {
           </div>
           <div className="">
             {Object.entries(props.posts).map(([category, group]) => {
-              console.log(category);
               let groupDivs = group
                 .filter((p) => {
                   if (!p.frontMatter.question) {
