@@ -7,6 +7,7 @@ import path from "path";
 import { useEffect, useReducer, useRef, useState } from "react";
 import Layout from "../../components/Layout";
 import { FAQ_PATH, faqFilePaths } from "../../utils/mdxUtils";
+import { groupBy } from "lodash";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -19,38 +20,26 @@ const components = {
 function Post({ source, frontMatter }: any) {
   return (
     <div className="flex-1 flex h-full ">
-      <article className="max-w-3xl flex-col flex flex-1 h-full m-auto px-4 mb-12">
+      <section className="max-w-3xl flex-col flex flex-1 h-full m-auto px-4 mb-4">
         <div>
           <h2>{frontMatter.question}</h2>
         </div>
 
         <MDXRemote {...source} components={components} />
-      </article>
+      </section>
     </div>
   );
 }
 
-function useFocusOnShortcut() {
-  const ref = useRef<HTMLInputElement>();
-  useEffect(() => {
-    function listener(e: KeyboardEvent) {
-      console.log(e);
-      if ((e.key === "/" || e.key === "k") && (e.metaKey || e.ctrlKey)) {
-        ref.current?.focus();
-        alert("what");
-      }
-    }
-
-    document.addEventListener("keydown", listener);
-    return () => {
-      document.removeEventListener("keydown", listener);
-    };
-  }, [ref.current]);
-  return ref;
-}
-
 export default function Index(props: {
-  posts: { source: any; frontMatter: any; content: string; slug: string }[];
+  posts: {
+    [key: string]: {
+      source: any;
+      frontMatter: any;
+      content: string;
+      slug: string;
+    }[];
+  };
 }) {
   const [search, setSearch] = useState("");
 
@@ -76,11 +65,11 @@ export default function Index(props: {
 
   return (
     <Layout>
-      <div className="bg-gray-100 rounded border-b px-12">
-        <div className="max-w-3xl mx-auto w-full text-sm border-l border-r flex items-center bg-gray-50 pr-4">
+      <div className="bg-gray-100 rounded ">
+        <div className="max-w-3xl mx-4 mx-auto w-full text-sm border-l border-r flex items-center bg-gray-50 pr-4">
           <input
             placeholder="Search the FAQ"
-            className="py-2 pl-4 mr-4 w-full bg-gray-50"
+            className="py-2  px-4 mr-4 w-full bg-gray-50"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
             type="text"
@@ -103,31 +92,46 @@ export default function Index(props: {
           </svg>
         </div>
       </div>
+      <div className="">
+        {Object.entries(props.posts).map(([category, group]) => {
+          console.log(category);
+          let groupDivs = group
+            .filter((p) => {
+              if (!p.frontMatter.question) {
+                throw new Error(`${p.slug} is missing a question`);
+              }
 
-      <div className="mt-12 flex flex-col">
-        {props.posts
-          .filter((p) => {
-            if (!p.frontMatter.question) {
-              throw new Error(`${p.slug} is missing a question`);
-            }
+              if (
+                p.frontMatter.question
+                  .toLowerCase()
+                  .includes(search.toLowerCase())
+              ) {
+                return true;
+              }
+              if (p.content.toLowerCase().includes(search.toLowerCase())) {
+                return true;
+              }
+            })
+            .map((p) => (
+              <div className="">
+                <Post key={p.frontMatter.title} {...p} />
+              </div>
+            ));
 
-            if (
-              p.frontMatter.question
-                .toLowerCase()
-                .includes(search.toLowerCase())
-            ) {
-              return true;
-            }
-            if (p.content.toLowerCase().includes(search.toLowerCase())) {
-              return true;
-            }
-          })
-          .map((p) => (
-            <>
-              <Post key={p.frontMatter.title} {...p} />
-              <hr className="mb-12" />
-            </>
-          ))}
+          return (
+            <div>
+              <h1 className=" border-t py-2 pt-12 w-full uppercase font-mono flex flex-1 justify-start text-sm">
+                <div className="max-w-3xl flex px-4 mx-auto items-center w-full flex">
+                  {category}
+                  <div className="h-0.5 bg-gray-100 w-full ml-2" />
+                </div>
+              </h1>
+              <div className="border-b-4 pt-4 " key={category}>
+                {groupDivs}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </Layout>
   );
@@ -171,19 +175,12 @@ export const getStaticProps = async ({ params }: any) => {
       })
   );
 
+  const groups = groupBy(posts, (p) => p.frontMatter.category);
+
   return {
     props: {
       // Sort by priority
-      posts: posts.sort((a, b) => {
-        let aCategory = a.frontMatter.category || "z";
-        let bCategory = b.frontMatter.category || "z";
-
-        if (aCategory < bCategory)
-          //sort string ascending
-          return -1;
-        if (aCategory > bCategory) return 1;
-        return 0; //default return value (no sorting)
-      }),
+      posts: groups,
     },
   };
 };
