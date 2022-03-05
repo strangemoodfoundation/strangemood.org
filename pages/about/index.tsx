@@ -70,10 +70,16 @@ export default function Index(props: {
           <nav>
             {Object.entries(props.posts).map(([category, group]) => {
               return (
-                <div className="text-sm w-64 flex flex-col">
+                <div
+                  className="text-sm w-64 flex flex-col"
+                  key={"side" + category}
+                >
                   <div className="font-bold mt-4">{category}</div>
                   {group.map((post) => (
-                    <div className="ml-2 flex mt-1 opacity-80">
+                    <div
+                      key={"side" + post.slug}
+                      className="ml-2 flex mt-1 opacity-80"
+                    >
                       {post.frontMatter.question}
                     </div>
                   ))}
