@@ -65,74 +65,94 @@ export default function Index(props: {
 
   return (
     <Layout>
-      <div className="bg-gray-100 rounded ">
-        <div className="max-w-3xl mx-4 mx-auto w-full text-sm border-l border-r flex items-center bg-gray-50 pr-4">
-          <input
-            placeholder="Search the FAQ"
-            className="py-2  px-4 mr-4 w-full bg-gray-50"
-            onChange={(e) => setSearch(e.target.value)}
-            value={search}
-            type="text"
-            ref={ref}
-          />
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </div>
-      </div>
-      <div className="">
-        {Object.entries(props.posts).map(([category, group]) => {
-          console.log(category);
-          let groupDivs = group
-            .filter((p) => {
-              if (!p.frontMatter.question) {
-                throw new Error(`${p.slug} is missing a question`);
-              }
-
-              if (
-                p.frontMatter.question
-                  .toLowerCase()
-                  .includes(search.toLowerCase())
-              ) {
-                return true;
-              }
-              if (p.content.toLowerCase().includes(search.toLowerCase())) {
-                return true;
-              }
-            })
-            .map((p) => (
-              <div className="">
-                <Post key={p.frontMatter.title} {...p} />
-              </div>
-            ));
-
-          return (
-            <div>
-              <h1 className=" border-t py-2 pt-12 w-full uppercase font-mono flex flex-1 justify-start text-sm">
-                <div className="max-w-3xl flex px-4 mx-auto items-center w-full flex">
-                  {category}
-                  <div className="h-0.5 bg-gray-100 w-full ml-2" />
+      <div className="flex w-full">
+        <div className="p-4 bg-black text-white md:flex hidden">
+          <nav>
+            {Object.entries(props.posts).map(([category, group]) => {
+              return (
+                <div className="text-sm w-64 flex flex-col">
+                  <div className="font-bold mt-4">{category}</div>
+                  {group.map((post) => (
+                    <div className="ml-2 flex mt-1 opacity-80">
+                      {post.frontMatter.question}
+                    </div>
+                  ))}
                 </div>
-              </h1>
-              <div className="pt-4 " key={category}>
-                {groupDivs}
-              </div>
-              <div className="h-12 bg-black" />
+              );
+            })}
+          </nav>
+        </div>
+        <div className="flex flex-col w-full">
+          <div className="bg-gray-100 rounded ">
+            <div className="max-w-3xl mx-4 mx-auto w-full text-sm border-l border-r flex items-center bg-gray-50 pr-4">
+              <input
+                placeholder="Search the FAQ"
+                className="py-2  px-4 mr-4 w-full bg-gray-50"
+                onChange={(e) => setSearch(e.target.value)}
+                value={search}
+                type="text"
+                ref={ref}
+              />
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
             </div>
-          );
-        })}
+          </div>
+          <div className="">
+            {Object.entries(props.posts).map(([category, group]) => {
+              console.log(category);
+              let groupDivs = group
+                .filter((p) => {
+                  if (!p.frontMatter.question) {
+                    throw new Error(`${p.slug} is missing a question`);
+                  }
+
+                  if (
+                    p.frontMatter.question
+                      .toLowerCase()
+                      .includes(search.toLowerCase())
+                  ) {
+                    return true;
+                  }
+                  if (p.content.toLowerCase().includes(search.toLowerCase())) {
+                    return true;
+                  }
+                })
+                .map((p) => (
+                  <div className="">
+                    <Post key={p.frontMatter.title} {...p} />
+                  </div>
+                ));
+
+              return (
+                <div>
+                  <h1 className=" border-t py-2 pt-12 w-full uppercase font-mono flex flex-1 justify-start text-sm">
+                    <div className="max-w-3xl flex px-4 mx-auto items-center w-full flex">
+                      {category}
+                      <div className="h-0.5 bg-gray-100 w-full ml-2" />
+                    </div>
+                  </h1>
+                  <div className="pt-4 " key={category}>
+                    {groupDivs}
+                  </div>
+                  <div className="h-12 bg-black" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </Layout>
   );
