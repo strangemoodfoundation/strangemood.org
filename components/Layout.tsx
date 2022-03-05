@@ -30,7 +30,7 @@ export default function Layout(props: { children: any }) {
               docs
             </a> */}
             <a
-              href="/posts/about"
+              href="/about"
               className="underline hover:opacity-50  sm:text-base text-sm"
             >
               about
