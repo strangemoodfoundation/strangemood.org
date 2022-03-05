@@ -176,7 +176,13 @@ export const getStaticProps = async ({ params }: any) => {
       })
   );
 
-  const groups = groupBy(posts, (p) => p.frontMatter.category);
+  const groups = groupBy(
+    posts.sort((a, b) => {
+      // sort by priority
+      return (b.frontMatter.priority || 0) - (a.frontMatter.priority || 0);
+    }),
+    (p) => p.frontMatter.category
+  );
 
   return {
     props: {
