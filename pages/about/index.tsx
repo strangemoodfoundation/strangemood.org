@@ -21,8 +21,34 @@ function Post({ source, frontMatter, slug }: any) {
   return (
     <div className="flex-1 flex h-full ">
       <section className="max-w-3xl flex-col flex flex-1 h-full m-auto px-4 mb-4">
-        <div>
-          <h2 id={slug}>{frontMatter.question}</h2>
+        <div className="flex justify-between items-center">
+          <a href={`#${slug}`}>
+            <h2 id={slug} className="hover:underline">
+              {frontMatter.question}
+            </h2>
+          </a>
+
+          <div className="flex flex-row">
+            <a
+              href={`https://github.com/strangemoodfoundation/strangemood.org/edit/main/faq/${slug}.mdx`}
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 text-gray-400 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <MDXRemote {...source} components={components} />
@@ -149,7 +175,7 @@ export default function Index(props: {
 
               return (
                 <div key={"outer" + category}>
-                  <h1 className=" border-t py-2 pt-12 w-full uppercase font-mono flex flex-1 justify-start text-sm">
+                  <h1 className="border-t py-2 pt-12 w-full uppercase font-mono flex flex-1 justify-start text-sm">
                     <div className="max-w-3xl flex px-4 mx-auto items-center w-full flex">
                       {category}
                       <div className="h-0.5 bg-gray-100 w-full ml-2" />
