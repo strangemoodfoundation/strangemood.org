@@ -15,7 +15,7 @@ export default function Layout(props: { children: any }) {
   return (
     <div className="flex flex-col h-full w-full">
       <div className="border-b">
-        <nav className="px-4 pt-4 gap-1 pb-4 mx-auto max-w-6xl flex flex-flex items-center justify-between">
+        <nav className="px-4 pt-4 gap-1 pb-4 mx-auto flex flex-flex items-center justify-between">
           <Link href="/">
             <a className="font-bold hover:opacity-50 text-center sm:text-lg text-sm m-0 p-0">
               Strangemood

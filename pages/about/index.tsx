@@ -137,13 +137,13 @@ export default function Index(props: {
                   }
                 })
                 .map((p) => (
-                  <div className="">
+                  <div className="" key={"title" + p.slug}>
                     <Post key={p.frontMatter.title} {...p} />
                   </div>
                 ));
 
               return (
-                <div>
+                <div key={"outer" + category}>
                   <h1 className=" border-t py-2 pt-12 w-full uppercase font-mono flex flex-1 justify-start text-sm">
                     <div className="max-w-3xl flex px-4 mx-auto items-center w-full flex">
                       {category}
