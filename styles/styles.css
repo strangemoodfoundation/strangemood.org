@@ -52,15 +52,3 @@ h4 {
   margin-bottom: 1em;
   @apply text-sm;
 }
-
-p,
-pre {
-  font-size: 1em;
-  line-height: 1.63em;
-  padding-top: 0.5em;
-  margin-bottom: 1.13em;
-}
-
-pre {
-  overflow: scroll;
-}
