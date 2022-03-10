@@ -13,7 +13,7 @@ article a:not(.clear) {
 html,
 body,
 #__next {
-  font: 16px/1.6 "Helvetica";
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   padding: 0;
   margin: 0;
   display: flex;

@@ -3,7 +3,7 @@ import { useLocalStorage } from "../lib/useLocalStorage";
 
 const tabs = [
    { name: '🕹️ Game Player', href: '#', value: "gamer" },
-   { name: '👩‍💻 Game Maker', href: '#', value: "maker" },
+   { name: '🧑‍💻 Game Maker', href: '#', value: "maker" },
    { name: '📹 Content Creator', href: '#', value: "creator" }
 ]
 
@@ -23,7 +23,7 @@ export default function Character({setPersona, persona}: CharacterProps) {
       <div>
          <div className="mx-auto max-w-lg px-4 pt-12 text-center sm:max-w-4xl sm:px-6 lg:max-w-8xl lg:px-8">
             <h2 
-               className={`text-base font-semibold uppercase tracking-wider text-${color}-500`}
+               className={`text-base font-bold uppercase tracking-wider text-${color}-500`}
             >
                Choose your character:
             </h2>
