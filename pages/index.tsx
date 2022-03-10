@@ -19,8 +19,8 @@ const Home: NextPage = () => {
       <Character setPersona={setPersona} persona={persona}/>
       <Hero persona={persona}/>
       {/* <Logos/> */}
-      <Protocol persona={persona}/>
       <Features persona={persona}/>
+      <Protocol persona={persona}/>
       <FAQ/>
     </Layout>
   );

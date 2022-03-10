@@ -4,9 +4,9 @@ export function getPersonaPrimaryColor(persona: string): string {
       case "maker":
          return "indigo";
       case "gamer":
-         return "red";
+         return "rose";
       case "creator":
-         return "green";
+         return "emerald";
       default:
          return "black";
    }

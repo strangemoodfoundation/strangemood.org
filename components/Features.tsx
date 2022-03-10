@@ -1,10 +1,13 @@
 import {
   CashIcon,
+  CursorClickIcon,
   LibraryIcon,
   LockClosedIcon,
   ScaleIcon,
+  SearchIcon,
   ShoppingBagIcon,
   SpeakerphoneIcon,
+  VideoCameraIcon,
 } from '@heroicons/react/outline'
 import { getPersonaPrimaryColor } from '../lib/persona';
 
@@ -47,15 +50,79 @@ type FeaturesProps = {
 
 export default function Features({ persona }: FeaturesProps) {
   const color = getPersonaPrimaryColor(persona);
+
+  var features: any[] = [];
+  switch (persona) {
+    case "gamer":
+      features = [
+        {
+          name: 'Support Developers',
+          description: 'Transaction fees are just 1%. That means the money goes to the people who make the game, not Steam.',
+          icon: CashIcon,
+        },
+        {
+          name: 'Support Creators',
+          description: 'Your favorite creator can setup their own store. When you shop there they keep a portion of the revenue.',
+          icon: VideoCameraIcon,
+        },
+        {
+          name: 'Unified Library',
+          description: 'Games purchased from any storefront using our protocol are available in a unified library.',
+          icon: LibraryIcon,
+        },
+      ];
+      break;
+    case "maker":
+      features = [
+        {
+          name: 'Low Fees',
+          description: 'Transactions fees are just 1% and can be lowered by the community.',
+          icon: CashIcon,
+        },
+        {
+          name: 'Community Controlled',
+          description: 'Get rewarded with voting power when your games sell.',
+          icon: ScaleIcon,
+        },
+        {
+          name: 'Distribution Included',
+          description: 'Set a % of a listing\'s price as a bounty for generating sales.',
+          icon: SpeakerphoneIcon,
+        }
+      ];
+      break;
+    case "creator":
+      features = [
+        {
+          name: 'Your Store',
+          description: 'Create a store and keep a portion of its sales.',
+          icon: ShoppingBagIcon,
+        },
+        {
+          name: 'Curated Selection',
+          description: 'Fill your store with games that your audience will like.',
+          icon: SearchIcon,
+        },
+        {
+          name: 'Better than Ads',
+          description: 'Don\'t waste time showing fans products they don\'t want.',
+          icon: CursorClickIcon,
+        }
+      ];
+      break;
+    default:
+      break;
+  }
+
   return (
-    <div className="relative bg-white py-8 sm:py-12 lg:py-16">
+    <div className="relative bg-white sm:pb-12 lg:pb-16">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-6xl lg:px-8">
         <h2 className={`mt-12 text-base font-semibold uppercase tracking-wider text-${color}-600`}>Benefits</h2>
         <div className="mt-6">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div key={feature.name} className="pt-6">
-                <div className="flow-root rounded-lg bg-gray-50 px-6 pb-3">
+                <div className="flow-root rounded-lg bg-gray-50 px-6 pb-6">
                   <div className="-mt-6">
                     <div>
                       <span className={`inline-flex items-center justify-center rounded-md bg-${color}-500 p-3 shadow-lg`}>

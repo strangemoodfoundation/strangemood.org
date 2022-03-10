@@ -7,7 +7,7 @@ export default function Navigation() {
             <nav className="max-w-6xl px-2 sm:px-6 lg:px-8 py-2 gap-1 mx-auto flex flex-flex items-center justify-between">
                <Link href="/">
                   <div className="flex items-center gap-2">
-                  <span className="text-2xl my-0 py-0">☼</span> 
+                  <span className="text-5xl font-mono my-0 py-0">☼</span> 
                   <a className="font-bold hover:opacity-50 text-center text-3xl m-0 p-0">
                   Strangemood
                   </a>

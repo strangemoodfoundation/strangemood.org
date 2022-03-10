@@ -18,7 +18,7 @@ type CharacterProps = {
 
 export default function Character({setPersona, persona}: CharacterProps) {
    const color = getPersonaPrimaryColor(persona);
-   console.log(persona);
+   
    return (
       <div>
          <div className="mx-auto max-w-lg px-4 pt-12 text-center sm:max-w-4xl sm:px-6 lg:max-w-8xl lg:px-8">
