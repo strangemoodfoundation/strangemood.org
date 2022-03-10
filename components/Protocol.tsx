@@ -5,7 +5,7 @@ export default function Protocol() {
    return (
       <>
          <div className="relative pt-16 sm:pt-24 lg:pt-32">
-            <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+            <div className="lg:mx-auto lg:max-w-6xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
                <div className="px-4 py-0 max-w-xl mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0">
                   <div>
                      <div className='flex flex-row items-center gap-3'>

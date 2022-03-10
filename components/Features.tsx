@@ -50,7 +50,7 @@ import {
  export default function Features() {
    return (
      <div className="relative bg-white py-8 sm:py-12 lg:py-16">
-       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-6xl lg:px-8">
          {/* <p className="mt-2 mb-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
            A new kind of marketplace
          </p>

@@ -17,7 +17,7 @@ export default function Layout(props: { children: any }) {
     <div className="flex flex-col h-full w-full">
       <Navigation />
       {props.children}
-      <div className="bg-gray-50 border-t border-gray-200">
+      <div className="bg-gray-50">
         <div className="py-4 px-4  m-auto w-full justify-between text-center text-gray-500">
           <div className="pb-4 w-full justify-between flex">
             Strangemood is an unaudited protocol. Use at your own risk.

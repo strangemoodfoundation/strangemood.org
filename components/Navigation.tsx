@@ -4,7 +4,7 @@ export default function Navigation() {
    return (
       <>
          <div className="border-b">
-            <nav className="max-w-6xl px-4 py-2 gap-1 mx-auto flex flex-flex items-center justify-between">
+            <nav className="max-w-6xl px-2 sm:px-6 lg:px-8 py-2 gap-1 mx-auto flex flex-flex items-center justify-between">
                <Link href="/">
                   <div className="flex items-center gap-2">
                   <span className="text-5xl my-0 py-0">☼</span> 
