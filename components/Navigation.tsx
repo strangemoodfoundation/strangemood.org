@@ -4,11 +4,14 @@ export default function Navigation() {
    return (
       <>
          <div className="border-b">
-            <nav className="max-w-6xl px-4 pt-4 gap-1 pb-4 mx-auto flex flex-flex items-center justify-between">
+            <nav className="max-w-6xl px-4 py-2 gap-1 mx-auto flex flex-flex items-center justify-between">
                <Link href="/">
+                  <div className="flex items-center gap-2">
+                  <span className="text-5xl my-0 py-0">☼</span> 
                   <a className="font-bold hover:opacity-50 text-center text-3xl m-0 p-0">
-                     Strangemood
+                  Strangemood
                   </a>
+                  </div>
                </Link>
 
                <div className="flex gap-3 items-center">
