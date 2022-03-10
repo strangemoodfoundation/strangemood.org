@@ -6,19 +6,19 @@ const faqs = [
        "Strangemood is built on Solana; an environmentally friendly blockchain with fees less than a penny. A transaction uses 3.8 million times less energy than Bitcoin; or about the energy cost of making a google search. I know, I know, crypto, oof. It's just the best way to ensure that the treasury is owned by members of the co-op, and not a company who could use its position to fleece game developers. In other words, the Strangemood Foundation is a Decentralized Autonomous Organization, or DAO. To join the DAO, sell a game on the protocol or build a client application, like a marketplace.",
    },
    {
-      id: 1,
+      id: 2,
       question: "Why are fees so low?",
       answer:
         "Strangemood is built on Solana; an environmentally friendly blockchain with fees less than a penny. ",
     },
     {
-      id: 1,
+      id: 3,
       question: "What kind of games can I sell?",
       answer:
         "Strangemood is built on Solana; an environmentally friendly blockchain with fees less than a penny. ",
     },
     {
-      id: 1,
+      id: 4,
       question: "How do sellers control the protocol?",
       answer:
         "Strangemood is built on Solana; an environmentally friendly blockchain with fees less than a penny. ",

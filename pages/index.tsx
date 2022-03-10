@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
+import { useState } from "react";
 import Banner from "../components/Banner";
+import Character from "../components/Character";
 import FAQ from "../components/FAQ";
 import Features from "../components/Features";
 import Hero from "../components/Hero";
@@ -7,50 +9,18 @@ import Layout from "../components/Layout";
 import Logos from "../components/Logos";
 import Protocol from "../components/Protocol";
 
-function PrimaryLink(props: {
-  className?: string;
-  children: any;
-  href?: string;
-}) {
-  return (
-    <a
-      href={props.href}
-      className={
-        "clear cursor-pointer hover:bg-blue-200 border border-blue-900 bg-blue-100 px-4 py-2 font-bold rounded " +
-        props.className || ""
-      }
-    >
-      {props.children}
-    </a>
-  );
-}
-
-function MinorLink(props: {
-  className?: string;
-  children: any;
-  href?: string;
-}) {
-  return (
-    <a
-      href={props.href}
-      className={
-        "clear  cursor-pointer hover:bg-blue-200 border border-gray-900 px-4 py-2 font-bold rounded " +
-        props.className || ""
-      }
-    >
-      {props.children}
-    </a>
-  );
-}
 
 const Home: NextPage = () => {
+  const [persona, setPersona] = useState('maker');
+
   return (
-    <Layout>
-      <Banner/>
-      <Hero/>
-      <Logos/>
-      <Protocol/>
-      <Features/>
+    <Layout >
+      <Banner persona={persona}/>
+      <Character setPersona={setPersona} persona={persona}/>
+      <Hero persona={persona}/>
+      {/* <Logos/> */}
+      <Protocol persona={persona}/>
+      <Features persona={persona}/>
       <FAQ/>
     </Layout>
   );

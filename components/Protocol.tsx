@@ -1,7 +1,12 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { LinkIcon } from '@heroicons/react/outline'
+import { getPersonaPrimaryColor } from '../lib/persona';
 
-export default function Protocol() {
+type ProtocolProps = {
+   persona: string;
+}
+
+export default function Protocol({persona}: ProtocolProps) {
+   const color = getPersonaPrimaryColor(persona);
    return (
       <>
          <div className="relative pt-16 sm:pt-24 lg:pt-32">
@@ -9,7 +14,7 @@ export default function Protocol() {
                <div className="px-4 py-0 max-w-xl mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0">
                   <div>
                      <div className='flex flex-row items-center gap-3'>
-                        <span className="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
+                        <span className={`h-12 w-12 rounded-md flex items-center justify-center bg-${color}-600`}>
                            <LinkIcon className="h-6 w-6 text-white" aria-hidden="true" />
                         </span>
                         <h2 className="my-0 py-0 text-3xl font-extrabold tracking-tight text-gray-900">
@@ -32,7 +37,7 @@ export default function Protocol() {
                </div>
                <div className="mt-12 sm:mt-16 lg:mt-0">
                   <div className="flex flex-col justify-around pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
-                     <div className='align-center bg-indigo-700 rounded-xl p-5 text-white font-mono'>
+                     <div className={`align-center bg-${color}-700 rounded-xl p-5 text-white font-mono`}>
                         <p>import &#123; </p>
                         <p>&nbsp;&nbsp;&nbsp; purchaseListing,</p>
                         <p>&nbsp;&nbsp;&nbsp; fetchStrangemoodProgram </p>
