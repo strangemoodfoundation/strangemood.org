@@ -14,25 +14,22 @@ export default function Layout(props: { children: any }) {
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="border-b">
-        <nav className="px-4 pt-4 gap-1 pb-4 mx-auto flex flex-flex items-center justify-between">
+      <div className="  border-b bg-gray-50 pattern w-full">
+        <nav className="px-4 bg-white md:border-l md:border-r max-w-4xl w-full py-1 gap-1 mx-auto flex flex-flex items-center justify-between">
           <Link href="/">
-            <a className="font-bold hover:opacity-50 text-center sm:text-lg text-sm m-0 p-0">
-              Strangemood
+            <a className="text-gray-600 font-mono hover:opacity-50 text-center sm:text-sm text-xs m-0 p-0">
+              strangemood
             </a>
           </Link>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center ">
             {/* <a
               href="https://docs.strangemood.org"
               className="underline hover:opacity-50  sm:text-base text-sm"
             >
               docs
             </a> */}
-            <a
-              href="/about"
-              className="underline hover:opacity-50  sm:text-base text-sm"
-            >
+            <a href="/about" className="underline hover:opacity-50  text-sm">
               about
             </a>
 
@@ -79,9 +76,10 @@ export default function Layout(props: { children: any }) {
           </div>
         </nav>
       </div>
+
       {props.children}
       <div className="bg-gray-50 border-t border-gray-200">
-        <div className="py-4 px-4  m-auto w-full justify-between text-center text-gray-500">
+        <div className="py-4 px-4 max-w-4xl  m-auto w-full justify-between text-center text-gray-500">
           <div className="pb-4 w-full justify-between flex">
             Strangemood is an unaudited protocol. Use at your own risk.
           </div>

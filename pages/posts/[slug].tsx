@@ -24,11 +24,10 @@ const components = {
 export default function PostPage({ source, frontMatter }: any) {
   return (
     <Layout>
-      <div>
-        <h1>{frontMatter.title}</h1>
-      </div>
+      <div></div>
 
       <article className="max-w-3xl m-auto px-4 mt-12 mb-12">
+        <h1 className="text-2xl pb-2 mb-4 border-b">{frontMatter.title}</h1>
         <MDXRemote {...source} components={components} />
       </article>
     </Layout>
