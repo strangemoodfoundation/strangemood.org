@@ -22,7 +22,7 @@ function Post({ source, frontMatter, slug }: any) {
     <div className="flex-1 flex h-full ">
       <section className="max-w-3xl flex-col flex flex-1 h-full m-auto px-4 mb-4">
         <div className="flex justify-between items-center">
-          <a href={`#${slug}`}>
+          <a href={`#${slug}`} className="clear underline">
             <h2 id={slug} className="hover:underline">
               {frontMatter.question}
             </h2>
@@ -143,7 +143,7 @@ export default function Index(props: {
               </svg>
             </div>
           </div>
-          <div className="">
+          <article className="">
             {Object.entries(props.posts).map(([category, group]) => {
               let groupDivs = group
                 .filter((p) => {
@@ -186,7 +186,7 @@ export default function Index(props: {
                 </div>
               );
             })}
-          </div>
+          </article>
         </div>
       </div>
     </Layout>
