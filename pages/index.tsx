@@ -9,8 +9,9 @@ function PrimaryLink(props: {
   return (
     <a
       href={props.href}
+      target="_blank"
       className={
-        "clear cursor-pointer border-b-2 hover:bg-blue-200 border border-blue-900 bg-blue-100 px-4 py-2 font-bold rounded " +
+        "clear cursor-pointer border-b-2 hover:bg-blue-300 border border-blue-900 bg-blue-500 text-white text-shadow px-4 py-2 font-bold rounded " +
           props.className || ""
       }
     >
@@ -36,6 +37,29 @@ function MinorLink(props: {
     </a>
   );
 }
+
+// const Home: NextPage = () => {
+//   return (
+//     <Layout>
+//       <div className="flex flex-1 flex-col max-w-4xl mx-auto w-full border-l border-r">
+//         <div className="bg-white h-full w-full m-auto pb-8 pt-12 flex flex-col">
+//           <div className="py-28 px-8  border-b">
+//             <h1 className="text-2xl mb-1 font-bold">
+//               A new way to sell video games on the internet.
+//             </h1>
+//             <p className="font-muted mb-8">
+//               Strangemood is an open source technology
+//             </p>
+//             <PrimaryLink className="mt-4" href="https://docs.strangemood.org">
+//               Build a game store
+//             </PrimaryLink>
+//           </div>
+//           <div></div>
+//         </div>
+//       </div>
+//     </Layout>
+//   );
+// };
 
 const Home: NextPage = () => {
   return (
