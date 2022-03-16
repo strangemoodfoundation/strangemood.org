@@ -10,7 +10,7 @@ function PrimaryLink(props: {
     <a
       href={props.href}
       className={
-        "clear cursor-pointer hover:bg-blue-200 border border-blue-900 bg-blue-100 px-4 py-2 font-bold rounded " +
+        "clear cursor-pointer border-b-2 hover:bg-blue-200 border border-blue-900 bg-blue-100 px-4 py-2 font-bold rounded " +
           props.className || ""
       }
     >
@@ -55,10 +55,10 @@ const Home: NextPage = () => {
               it's like Steam, if Steam was a co-op.
             </p>
             <div className="mt-8 flex">
-              {/* <PrimaryLink href="https://demo.strangemood.org">
-              Play with the demo
-            </PrimaryLink> */}
-              <MinorLink className="ml-0" href="/about">
+              <PrimaryLink href="https://discord.gg/Y2R3VBcRmA">
+                Join the Discord
+              </PrimaryLink>
+              <MinorLink className="ml-2" href="/about">
                 Read the FAQ
               </MinorLink>
             </div>
