@@ -18,7 +18,7 @@ export default function Layout(props: { children: any }) {
         <nav className="px-4 bg-white max-w-4xl w-full py-1 gap-1 mx-auto flex flex-flex items-center justify-between">
           <Link href="/">
             <a className="text-gray-600 font-mono hover:opacity-50 text-center sm:text-sm text-xs m-0 p-0">
-              <img src="sun.svg" className="h-4" />
+              <img src="/sun.svg" className="h-4" />
             </a>
           </Link>
 
@@ -72,6 +72,13 @@ export default function Layout(props: { children: any }) {
                   </clipPath>
                 </defs>
               </svg>
+            </a>
+
+            <a
+              href=""
+              className="text-sm clear cursor-pointer border-b-2 hover:bg-blue-300 border border-blue-900 bg-blue-500 text-white text-shadow px-4 py-1 font-bold rounded"
+            >
+              Signup for beta
             </a>
           </div>
         </nav>

@@ -38,29 +38,6 @@ function MinorLink(props: {
   );
 }
 
-// const Home: NextPage = () => {
-//   return (
-//     <Layout>
-//       <div className="flex flex-1 flex-col max-w-4xl mx-auto w-full border-l border-r">
-//         <div className="bg-white h-full w-full m-auto pb-8 pt-12 flex flex-col">
-//           <div className="py-28 px-8  border-b">
-//             <h1 className="text-2xl mb-1 font-bold">
-//               A new way to sell video games on the internet.
-//             </h1>
-//             <p className="font-muted mb-8">
-//               Strangemood is an open source technology
-//             </p>
-//             <PrimaryLink className="mt-4" href="https://docs.strangemood.org">
-//               Build a game store
-//             </PrimaryLink>
-//           </div>
-//           <div></div>
-//         </div>
-//       </div>
-//     </Layout>
-//   );
-// };
-
 const Home: NextPage = () => {
   return (
     <Layout>
@@ -79,9 +56,9 @@ const Home: NextPage = () => {
               it's like Steam, if Steam was a co-op.
             </p>
             <div className="mt-8 flex">
-              <PrimaryLink href="https://discord.gg/Y2R3VBcRmA">
+              <MinorLink href="https://discord.gg/Y2R3VBcRmA">
                 Join the Discord
-              </PrimaryLink>
+              </MinorLink>
               <MinorLink className="ml-2" href="/about">
                 Read the FAQ
               </MinorLink>
@@ -113,9 +90,9 @@ await purchaseListing(program, /* ... */);
 `}</pre>
 
             <div className="mt-8">
-              <PrimaryLink href="https://docs.strangemood.org" className="mr-2">
+              <MinorLink href="https://docs.strangemood.org" className="mr-2">
                 Read the docs
-              </PrimaryLink>
+              </MinorLink>
               <MinorLink href="https://github.com/strangemoodfoundation/strangemood">
                 Contribute on Github
               </MinorLink>
