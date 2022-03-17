@@ -66,9 +66,9 @@ const Home: NextPage = () => {
           </section>
 
           <section className="pb-16">
-            <h1 className="text-left mt-6">Wait, it's a protocol?</h1>
+            <h1 className="text-left mt-6">It's a protocol</h1>
             <p>
-              Yeah, like Email. No one <i>owns</i> Email and no-one owns
+              You know, like Email. No one <i>owns</i> Email and no-one owns
               Strangemood. That means anyone can have their <i>own</i> games
               store, just like anyone can make an email app. It doesn't matter
               if you bought the game from your favorite Twitch streamer's store,
