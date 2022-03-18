@@ -78,7 +78,7 @@ export default function Layout(props: { children: any }) {
               href="/forms/waitlist"
               className="text-sm clear cursor-pointer border-b-2 hover:bg-blue-300 border border-blue-900 bg-blue-500 text-white text-shadow px-4 py-1 font-bold rounded"
             >
-              Signup for beta
+              Join
             </a>
           </div>
         </nav>

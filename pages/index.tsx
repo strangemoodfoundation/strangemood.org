@@ -80,14 +80,6 @@ const Home: NextPage = () => {
               You can make a store with a bit of javascript (or your favorite
               language).
             </p>
-            <pre className="overflow-x-scroll">{`import {
-  purchaseListing,
-  fetchStrangemoodProgram
-} from "@strangemood/strangemood;
-
-const program = await fetchStrangemoodProgram(/* ... */);
-await purchaseListing(program, /* ... */);
-`}</pre>
 
             <div className="mt-8">
               <MinorLink href="https://docs.strangemood.org" className="mr-2">
