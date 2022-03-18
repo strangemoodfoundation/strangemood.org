@@ -1,4 +1,13 @@
 import Layout from "../../components/Layout";
+import {
+  ArrowRightIcon,
+  CalculatorIcon,
+  CurrencyDollarIcon,
+  LibraryIcon,
+  LightningBoltIcon,
+  ReceiptTaxIcon,
+} from "@heroicons/react/solid";
+import Link from "next/link";
 
 export function FormElement(props: {
   children: any;
@@ -49,7 +58,7 @@ export default function Welcome() {
   return (
     <div className="h-full flex w-full flex-col ">
       <div className="bg-black p-1 ">
-        <div className="text-xs font-mono flex items-center text-white ">
+        <div className="text-xs font-mono flex items-center text-gray-100 ">
           <img
             src="/sun.svg"
             className="h-4 w-4 mr-1 dark:bg-gray-500 bg-white"
@@ -68,12 +77,49 @@ export default function Welcome() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row flex-1 h-full">
-        <div className="px-4 py-8 mx-auto w-full h-full bg-gray-50 flex-1 transition-all hover:opacity-100 opacity-60">
+        <div className="px-4 py-8 mx-auto w-full h-full  text-gray-100 flex-1 transition-all  bg-black ">
           <h1 className="font-bold text-xl w-64 pb-2">Join Strangemood.</h1>
-          <p className=" md:pb-12">
-            Strangemood is collectively owned by the folks that use it, like a
-            co-op.
+          <p className="pb-6">
+            Strangemood is collectively controlled by the folks that use it,
+            like a co-op.
           </p>
+
+          <div className="flex items-start text-sm mb-1">
+            <ReceiptTaxIcon className="h-4 w-4 text-gray-400 mt-0.5" />
+            <div className="pl-2 flex-1">
+              1% of every sale goes to a community treasury.
+            </div>
+          </div>
+
+          <div className="flex items-start text-sm mb-1">
+            <CalculatorIcon className="h-4 w-4 text-gray-400 mt-0.5" />
+            <div className="pl-2 flex-1 ">
+              The treasury pays for expenses, like developers, servers, storage,
+              and so on.
+            </div>
+          </div>
+
+          <div className="flex items-start text-sm mb-1">
+            <LibraryIcon className="h-4 w-4 text-gray-400 mt-0.5" />
+            <div className="pl-2 flex-1">
+              The treasury and the contribution fee are controlled by voting
+              tokens.
+            </div>
+          </div>
+
+          <div className="flex items-start text-sm mb-1">
+            <LightningBoltIcon className="h-4 w-4 text-gray-400 mt-0.5" />
+            <div className="pl-2 flex-1">
+              Sellers are distributed voting tokens automatically on every sale;
+              so the sellers primarily control Strangemood.
+            </div>
+          </div>
+
+          <Link href={"/about"}>
+            <a className="py-2 pl-6 text-sm underline flex justify-between text-gray-400">
+              Learn more about how Strangemood works
+            </a>
+          </Link>
         </div>
         <div className=" md:border-l border-black w-full flex flex-col">
           <h2 className="font-bold text-xl pb-2 px-4 pt-8 ">
@@ -157,7 +203,7 @@ export default function Welcome() {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50 border-t border-gray-200">
+      {/* <div className="bg-black border-gray-200">
         <div className="py-1 px-2 m-auto w-full justify-between text-center text-gray-500 text-sm">
           <div className="flex w-full justify-between">
             <a
@@ -168,7 +214,7 @@ export default function Welcome() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
