@@ -84,61 +84,75 @@ export default function Welcome() {
             build a new game industry with us.
           </p>
           <div className="flex flex-col">
-            <div className="w-full flex flex-col mb-8">
-              <button className="border-t border-b-2 border-black px-4 mb-1 py-2 text-left flex flex-row">
-                <div className="flex-col flex py-2">
-                  <div className="font-bold pb-2 text-lg ">I make games</div>
-                  <div className="text-sm text-gray-600">
-                    Game developers automatically earn votes over the foundation
-                    every time they make a sale.
-                  </div>
-                  <TagGroup>
-                    <Tag>Sell more games</Tag>
-                    <Tag>Pay less in fees</Tag>
-                    <Tag>Own the game store</Tag>
-                  </TagGroup>
+            <button className="border-t mb-8 border-b-2 border-black px-4  py-2 text-left flex flex-row">
+              <div className="flex-col flex py-2">
+                <div className="font-bold pb-2 text-lg ">I make games</div>
+                <div className="text-sm text-gray-600">
+                  Game developers automatically earn votes over the foundation
+                  every time they make a sale.
                 </div>
-              </button>
+                <TagGroup>
+                  <Tag>Sell more games</Tag>
+                  <Tag>Pay less in fees</Tag>
+                  <Tag>Own the game store</Tag>
+                </TagGroup>
+              </div>
+            </button>
+
+            <button className="border-t border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
+              <div className="flex-col flex py-2">
+                <div className="font-bold pb-2 text-lg ">
+                  I hack on open source
+                </div>
+                <div className="text-sm text-gray-600">
+                  Open source developers that contribute to the ecosystem can
+                  earn voting stake in the protocol and get paid for their work.
+                </div>
+
+                <TagGroup>
+                  <Tag>Get paid</Tag>
+                  <Tag>Earn voting stake</Tag>
+                  <Tag>Rust & TypeScript</Tag>
+                </TagGroup>
+              </div>
+            </button>
+
+            <button className="border-t border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
+              <div className="flex-col flex py-2">
+                <div className="font-bold pb-2 text-lg ">
+                  I want to sell games to my audience
+                </div>
+                <div className="text-sm text-gray-600">
+                  Strangemood lets anyone make a store and collect commissions
+                  set by game developers.
+                </div>
+
+                <TagGroup>
+                  <Tag>Make a % of game sales</Tag>
+                  <Tag>Make more than ads or sponsorships</Tag>
+                </TagGroup>
+              </div>
+            </button>
+          </div>
+          <div className="px-4  h-full flex-1 text-sm inline">
+            <div className="font-bold pb-1">Are none of these you? </div>{" "}
+            <div>
+              There's many other ways to partner with the Strangemood
+              foundation. Consider reaching out on one of the following:
             </div>
-
-            <div className="w-full flex flex-col mb-8">
-              <button className="border-t border-b-2 border-black px-4 mb-1 py-2 text-left flex flex-row">
-                <div className="flex-col flex py-2">
-                  <div className="font-bold pb-2 text-lg ">
-                    I hack on open source
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    Open source developers that contribute to the ecosystem can
-                    earn voting stake in the protocol and get paid for their
-                    work.
-                  </div>
-
-                  <TagGroup>
-                    <Tag>Get paid</Tag>
-                    <Tag>Earn voting stake</Tag>
-                    <Tag>Rust & TypeScript</Tag>
-                  </TagGroup>
-                </div>
-              </button>
-            </div>
-
-            <div className="w-full flex flex-col mb-8">
-              <button className="border-t border-b-2 border-black px-4 mb-1 py-2 text-left flex flex-row">
-                <div className="flex-col flex py-2">
-                  <div className="font-bold pb-2 text-lg ">
-                    I want to sell games to my audience
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    Strangemood lets anyone make a store and collect commissions
-                    set by game developers.
-                  </div>
-
-                  <TagGroup>
-                    <Tag>Make a % of game sales</Tag>
-                    <Tag>Make more than ads or sponsorships</Tag>
-                  </TagGroup>
-                </div>
-              </button>
+            <div className="flex py-2 mt-2 gap-2">
+              <a
+                href="https://discord.com/invite/Y2R3VBcRmA"
+                className="flex px-2 py-1 border  text-sm border-black rounded"
+              >
+                Discord
+              </a>
+              <a
+                href="https://twitter.com/strangemoodorg"
+                className="flex px-2 py-1 border text-sm border-black rounded"
+              >
+                Twitter
+              </a>
             </div>
           </div>
         </div>
