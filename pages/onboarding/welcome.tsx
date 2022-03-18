@@ -121,7 +121,7 @@ export default function Welcome() {
             </a>
           </Link>
         </div>
-        <div className=" md:border-l border-black w-full flex flex-col">
+        <div className=" md:border-l border-black w-full flex flex-col max-w-6xl mx-auto">
           <h2 className="font-bold text-xl pb-2 px-4 pt-8 ">
             Which best describes you?
           </h2>
@@ -130,7 +130,7 @@ export default function Welcome() {
             build a new game industry with us.
           </p>
           <div className="flex flex-col">
-            <button className="border-t mb-8 border-b-2 border-black px-4  py-2 text-left flex flex-row">
+            <button className="border-t mx-4 border-l border-r rounded-sm mb-8 border-b-2 border-black px-4  py-2 text-left flex flex-row">
               <div className="flex-col flex py-2">
                 <div className="font-bold pb-2 text-lg ">I make games</div>
                 <div className="text-sm text-gray-600">
@@ -145,7 +145,7 @@ export default function Welcome() {
               </div>
             </button>
 
-            <button className="border-t border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
+            <button className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
               <div className="flex-col flex py-2">
                 <div className="font-bold pb-2 text-lg ">
                   I hack on open source
@@ -163,7 +163,7 @@ export default function Welcome() {
               </div>
             </button>
 
-            <button className="border-t border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
+            <button className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
               <div className="flex-col flex py-2">
                 <div className="font-bold pb-2 text-lg ">
                   I want to sell games to my audience
@@ -180,7 +180,7 @@ export default function Welcome() {
               </div>
             </button>
           </div>
-          <div className="px-4  h-full flex-1 text-sm inline">
+          <div className="px-8 pb-12  h-full flex-1 text-sm inline">
             <div className="font-bold pb-1">Are none of these you? </div>{" "}
             <div>
               There's many other ways to partner with the Strangemood
