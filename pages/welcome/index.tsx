@@ -1,58 +1,12 @@
 import Layout from "../../components/Layout";
 import {
-  ArrowRightIcon,
   CalculatorIcon,
-  CurrencyDollarIcon,
   LibraryIcon,
   LightningBoltIcon,
   ReceiptTaxIcon,
 } from "@heroicons/react/solid";
 import Link from "next/link";
-
-export function FormElement(props: {
-  children: any;
-  label: string;
-  required?: boolean;
-  className?: string;
-  hint?: string;
-}) {
-  return (
-    <label className={"flex flex-col  " + props.className}>
-      <div className="text-sm flex bg-gray-50 dark:bg-gray-800 justify-between font-mono ">
-        <div className="pl-4 py-1">{props.label}</div>
-
-        {props.required && (
-          <div className="bg-gray-100 dark:bg-gray-700 border-b items-center border-l px-4 py-0.5 text-xs inline-flex">
-            required
-          </div>
-        )}
-      </div>
-
-      {props.hint && (
-        <div className="bg-gray-50 dark:bg-gray-800 text-muted text-sm px-4 pb-2">
-          {props.hint}
-        </div>
-      )}
-      <div className="">{props.children}</div>
-    </label>
-  );
-}
-
-function Tag(props: { children: any }) {
-  return (
-    <div className="text-xs text-green-600 rounded bg-green-50 py-0.5 px-1">
-      {props.children}
-    </div>
-  );
-}
-
-function TagGroup(props: { children: any }) {
-  return (
-    <div className="flex sm:flex-row flex-col pt-2 gap-2 w-full md:items-center text-gray-300">
-      {props.children}
-    </div>
-  );
-}
+import { Tag, TagGroup } from "../../components/gui";
 
 export default function Welcome() {
   return (
@@ -87,7 +41,8 @@ export default function Welcome() {
           <div className="flex items-start text-sm mb-1">
             <ReceiptTaxIcon className="h-4 w-4 text-gray-400 mt-0.5" />
             <div className="pl-2 flex-1">
-              1% of every sale goes to a community treasury.
+              1% of every sale goes to a community treasury as a contribution
+              fee.
             </div>
           </div>
 
@@ -110,8 +65,8 @@ export default function Welcome() {
           <div className="flex items-start text-sm mb-1">
             <LightningBoltIcon className="h-4 w-4 text-gray-400 mt-0.5" />
             <div className="pl-2 flex-1">
-              Sellers are distributed voting tokens automatically on every sale;
-              so the sellers primarily control Strangemood.
+              Sellers are given voting tokens automatically on every sale; so
+              the sellers primarily control Strangemood.
             </div>
           </div>
 
@@ -121,7 +76,7 @@ export default function Welcome() {
             </a>
           </Link>
         </div>
-        <div className=" md:border-l border-black w-full flex flex-col max-w-6xl mx-auto">
+        <div className="md:border-l border-black w-full flex flex-col max-w-6xl mx-auto">
           <h2 className="font-bold text-xl pb-2 px-4 pt-8 ">
             Which best describes you?
           </h2>
@@ -130,55 +85,62 @@ export default function Welcome() {
             build a new game industry with us.
           </p>
           <div className="flex flex-col">
-            <button className="border-t mx-4 border-l border-r rounded-sm mb-8 border-b-2 border-black px-4  py-2 text-left flex flex-row">
-              <div className="flex-col flex py-2">
-                <div className="font-bold pb-2 text-lg ">I make games</div>
-                <div className="text-sm text-gray-600">
-                  Game developers automatically earn votes over the foundation
-                  every time they make a sale.
+            <Link href={"/welcome/game-devs"}>
+              <a className="border-t mx-4 border-l border-r rounded-sm mb-8 border-b-2 border-black px-4  py-2 text-left flex flex-row hover:border-blue-700 hover:text-blue-700">
+                <div className="flex-col flex py-2">
+                  <div className="font-bold pb-2 text-lg">I make games</div>
+                  <div className="text-sm text-gray-600">
+                    Game developers automatically earn votes over the foundation
+                    every time they make a sale.
+                  </div>
+                  <TagGroup>
+                    <Tag>Sell more games</Tag>
+                    <Tag>Pay less in fees</Tag>
+                    <Tag>Own the game store</Tag>
+                  </TagGroup>
                 </div>
-                <TagGroup>
-                  <Tag>Sell more games</Tag>
-                  <Tag>Pay less in fees</Tag>
-                  <Tag>Own the game store</Tag>
-                </TagGroup>
-              </div>
-            </button>
+              </a>
+            </Link>
 
-            <button className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
-              <div className="flex-col flex py-2">
-                <div className="font-bold pb-2 text-lg ">
-                  I hack on open source
-                </div>
-                <div className="text-sm text-gray-600">
-                  Open source developers that contribute to the ecosystem can
-                  earn voting stake in the protocol and get paid for their work.
-                </div>
+            <Link href={"/onboarding/marketplaces"}>
+              <button className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row transition-all hover:border-blue-700 hover:text-blue-700">
+                <div className="flex-col flex py-2">
+                  <div className="font-bold pb-2 text-lg ">
+                    I want to sell other folks' games to my audience
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Strangemood lets anyone make a store and collect commissions
+                    set by game developers.
+                  </div>
 
-                <TagGroup>
-                  <Tag>Get paid</Tag>
-                  <Tag>Earn voting stake</Tag>
-                  <Tag>Rust & TypeScript</Tag>
-                </TagGroup>
-              </div>
-            </button>
-
-            <button className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row">
-              <div className="flex-col flex py-2">
-                <div className="font-bold pb-2 text-lg ">
-                  I want to sell games to my audience
+                  <TagGroup>
+                    <Tag>Make a % of game sales</Tag>
+                    <Tag>Make more than ads or sponsorships</Tag>
+                  </TagGroup>
                 </div>
-                <div className="text-sm text-gray-600">
-                  Strangemood lets anyone make a store and collect commissions
-                  set by game developers.
-                </div>
+              </button>
+            </Link>
 
-                <TagGroup>
-                  <Tag>Make a % of game sales</Tag>
-                  <Tag>Make more than ads or sponsorships</Tag>
-                </TagGroup>
-              </div>
-            </button>
+            <Link href={"/onboarding/ecosystem"}>
+              <a className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row hover:border-blue-700 hover:text-blue-700">
+                <div className="flex-col flex py-2">
+                  <div className="font-bold pb-2 text-lg ">
+                    I hack on open source
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Open source developers that contribute to the ecosystem can
+                    earn voting stake in the protocol and get paid for their
+                    work.
+                  </div>
+
+                  <TagGroup>
+                    <Tag>Get paid</Tag>
+                    <Tag>Earn voting stake</Tag>
+                    <Tag>Rust & TypeScript</Tag>
+                  </TagGroup>
+                </div>
+              </a>
+            </Link>
           </div>
           <div className="px-8 pb-12  h-full flex-1 text-sm inline">
             <div className="font-bold pb-1">Are none of these you? </div>{" "}
@@ -189,15 +151,27 @@ export default function Welcome() {
             <div className="flex py-2 mt-2 gap-2">
               <a
                 href="https://discord.com/invite/Y2R3VBcRmA"
-                className="flex px-2 py-1 border  text-sm border-black rounded"
+                className="flex px-2 py-1 border items-center text-sm border-black rounded-sm"
               >
                 Discord
+                <img
+                  src="/discord.svg"
+                  height={14}
+                  width={24}
+                  className="h-3"
+                />
               </a>
               <a
                 href="https://twitter.com/strangemoodorg"
-                className="flex px-2 py-1 border text-sm border-black rounded"
+                className="flex px-2 py-1 border text-sm border-black items-center rounded-sm"
               >
-                Twitter
+                Twitter{" "}
+                <img
+                  src="/twitter.svg"
+                  height={14}
+                  width={24}
+                  className="h-4"
+                />
               </a>
             </div>
           </div>
