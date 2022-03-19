@@ -9,8 +9,7 @@ import {
   ReceiptTaxIcon,
 } from "@heroicons/react/solid";
 import Link from "next/link";
-import { Tag, TagGroup } from "../../components/gui";
-import { FormElement } from "../forms/waitlist";
+import { Tag, TagGroup, FormElement } from "../../components/gui";
 
 export default function Welcome() {
   return (
