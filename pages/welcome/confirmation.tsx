@@ -1,17 +1,3 @@
-import Layout from "../../components/Layout";
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  CalculatorIcon,
-  CheckCircleIcon,
-  LibraryIcon,
-  LightningBoltIcon,
-  ReceiptTaxIcon,
-} from "@heroicons/react/solid";
-import Link from "next/link";
-import { Tag, TagGroup } from "../../components/gui";
-import { FormElement } from "../forms/waitlist";
-
 export default function Welcome() {
   return (
     <div className="h-full flex w-full flex-col ">
