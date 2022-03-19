@@ -102,8 +102,12 @@ export default function Welcome() {
               </a>
             </Link>
 
-            <Link href={"/onboarding/marketplaces"}>
-              <button className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row transition-all hover:border-blue-700 hover:text-blue-700">
+            <div className="px-8 pb-2 font-mono text-sm text-gray-700 ">
+              Coming Soon
+            </div>
+
+            <Link href={"#"}>
+              <div className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row transition-all opacity-30">
                 <div className="flex-col flex py-2">
                   <div className="font-bold pb-2 text-lg ">
                     I want to sell other folks' games to my audience
@@ -118,11 +122,14 @@ export default function Welcome() {
                     <Tag>Make more than ads or sponsorships</Tag>
                   </TagGroup>
                 </div>
-              </button>
+              </div>
             </Link>
 
-            <Link href={"/onboarding/ecosystem"}>
-              <a className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row hover:border-blue-700 hover:text-blue-700">
+            <div className="px-8 pb-2 font-mono text-sm text-gray-700 ">
+              Coming Soon
+            </div>
+            <Link href={"#"}>
+              <div className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row opacity-30">
                 <div className="flex-col flex py-2">
                   <div className="font-bold pb-2 text-lg ">
                     I hack on open source
@@ -139,7 +146,7 @@ export default function Welcome() {
                     <Tag>Rust & TypeScript</Tag>
                   </TagGroup>
                 </div>
-              </a>
+              </div>
             </Link>
           </div>
           <div className="px-8 pb-12  h-full flex-1 text-sm inline">
