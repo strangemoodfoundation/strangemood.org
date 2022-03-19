@@ -1,6 +1,7 @@
 import Layout from "../../components/Layout";
 import {
   ArrowLeftIcon,
+  ArrowRightIcon,
   CalculatorIcon,
   CheckCircleIcon,
   LibraryIcon,
@@ -48,7 +49,7 @@ export default function Welcome() {
             </div>
           </div>
 
-          <div className="rounded-t-sm sm:border-l pb-12 sm:border-r border-t border-black bg-white h-full flex-1 flex flex-col">
+          <div className="rounded-t-sm sm:border-l mb-12 border-b-0 sm:border-b  sm:border-r border-t border-black bg-white h-full flex-1 flex flex-col">
             <div className="bg-black text-white px-4 py-8 flex  flex-col ">
               <h2 className="text-lg font-bold mb-1">
                 Apply to join Strangemood's beta
@@ -60,7 +61,8 @@ export default function Welcome() {
 
             <div className="border-b py-8">
               <div className="px-4">
-                What happens in the Strangemood Foundation beta?
+                What happens when you crosslist your game on the Strangemood
+                beta?
               </div>
               <div className="px-4 pt-4">
                 <div className="flex items-start p-0 m-0">
@@ -152,33 +154,39 @@ export default function Welcome() {
               </FormElement>
 
               <FormElement label="Team or studio size" hint="" required>
-                <select
-                  name="team-size"
-                  required
-                  className="border-b border-t w-full px-4 py-2"
-                >
-                  <option value="small">1-10 people</option>
-                  <option value="medium">10-50 people</option>
-                  <option value="large">50+ people</option>
-                </select>
+                <div className="px-4 py-2">
+                  <select
+                    name="team-size"
+                    required
+                    className="border border-black border-b-2 w-full px-1 py-2 rounded-sm"
+                  >
+                    <option value="small">1-10 people</option>
+                    <option value="medium">10-50 people</option>
+                    <option value="large">50+ people</option>
+                  </select>
+                </div>
               </FormElement>
 
               <FormElement
                 label="Release Timeline"
                 hint="By 'release', we mean a first purchasable version. So early access counts as a 'release'. This can just be a rough estimate, or even a wildly incorrect estimate."
               >
-                <select
-                  name="team-size"
-                  required
-                  className="border-b border-t w-full px-4 py-2"
-                >
-                  <option value="existing-game">
-                    I can publish an existing{" "}
-                  </option>
-                  <option value="short-timeline">Within three months</option>
-                  <option value="medium-timeline">Within a year</option>
-                  <option value="long-timeline">Beyond a year from now</option>
-                </select>
+                <div className="px-4 py-2">
+                  <select
+                    name="release-schedule"
+                    required
+                    className="border border-black border-b-2 w-full px-1 py-2 rounded-sm"
+                  >
+                    <option value="existing-game">
+                      I can publish an existing{" "}
+                    </option>
+                    <option value="short-timeline">Within three months</option>
+                    <option value="medium-timeline">Within a year</option>
+                    <option value="long-timeline">
+                      Beyond a year from now
+                    </option>
+                  </select>
+                </div>
               </FormElement>
 
               <FormElement
@@ -186,13 +194,21 @@ export default function Welcome() {
                 hint="Please provide any information you can about your game, your studio, or your background. Links to current marketing materials, screenshots, and videos are helpful."
                 required
               >
-                <input
-                  type="text"
-                  className="w-full border-b px-4 text-sm py-2"
-                  placeholder="The Pitcher 3"
+                <textarea
+                  name="details"
+                  className="w-full border-b px-4 text-sm py-2 h-64"
+                  placeholder="Here's a link to our website and twitter page..."
                   required
                 />
               </FormElement>
+
+              <div className=" flex py-4 items-center">
+                <div className="h-px flex-1 w-full bg-black " />
+                <button className="border hover:opacity-80 mr-4 rounded bg-blue-500 px-4 py-2 text-white border-b-2 border-black flex items-center">
+                  Submit your application
+                  <ArrowRightIcon className="h-4 w-4 ml-2" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
