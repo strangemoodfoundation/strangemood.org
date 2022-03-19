@@ -127,7 +127,11 @@ export default function Welcome() {
               </div>
             </div>
 
-            <div className="flex flex-col flex-1">
+            <form
+              className="flex flex-col flex-1"
+              action="https://getform.io/f/dbf77bd4-31c8-434e-94c1-2b1e85dd4d1d"
+              method="POST"
+            >
               <div className="bg-gray-100 w-full font-bold px-4 py-4 border-b">
                 Your information
               </div>
@@ -209,7 +213,7 @@ export default function Welcome() {
                   <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
