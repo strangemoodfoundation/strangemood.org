@@ -45,66 +45,49 @@ export default function Welcome() {
             </div>
 
             <div className="border-b py-8">
-              <div className="px-4">What happens now?</div>
-              <div className="px-4 pt-4">
+              <div className="px-4">
                 <div className="flex items-start p-0 m-0">
-                  <CheckCircleIcon className="h-4 w-4 mr-2 top-1 relative" />{" "}
                   <div className="flex-1">
                     <span className="font-bold inline">
-                      Strangemood negotiates marketing deals on your behalf,
+                      You get a response within a few days.
                     </span>{" "}
                     <div className="inline">
-                      using the revenue you would have given to Steam. Instead
-                      of giving 30% of your revenue to Steam, let's pick a
-                      smaller number, give it to a youtuber or streamer instead,
-                      and split the difference.
+                      Members of the current Strangemood Foundation will review
+                      your application and onboard you when they get a chance.
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="px-4 pt-4">
-                <div className="flex items-start p-0 m-0">
-                  <CheckCircleIcon className="h-4 w-4 mr-2 top-1 relative" />{" "}
-                  <div className="flex-1">
-                    <span className="font-bold inline">
-                      You become an owner of Strangemood.
-                    </span>{" "}
-                    <div className="inline">
-                      When you sell your game, you're automatically given voting
-                      tokens on every sale by the Strangemood protocol.
-                    </div>
-                  </div>
+                <div className="pt-4">
+                  In the meantime, you should checkout Strangemood on Discord or
+                  Twitter to get updates.
                 </div>
-              </div>
 
-              <div className="px-4 pt-4">
-                <div className="flex items-start p-0 m-0">
-                  <CheckCircleIcon className="h-4 w-4 mr-2 top-1 relative" />{" "}
-                  <div className="flex-1">
-                    <span className="font-bold inline">
-                      Real people go to bat for you.
-                    </span>{" "}
-                    <div className="inline">
-                      We'll open up a private discord channel or telegram group
-                      that supports you until you release.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-4 pt-4">
-                <div className="flex items-start p-0 m-0">
-                  <CheckCircleIcon className="h-4 w-4 mr-2 top-1 relative" />{" "}
-                  <div className="flex-1">
-                    <span className="font-bold inline">You pay nothing.</span>{" "}
-                    <div className="inline">
-                      Strangemood is an open-source, community-driven
-                      organization, built by an economic research group.
-                      Strangemood funds development through the 1% contribution
-                      fees.
-                    </div>
-                  </div>
+                <div className="flex py-2 mt-2 gap-2">
+                  <a
+                    href="https://discord.com/invite/Y2R3VBcRmA"
+                    className="flex px-2 py-1 border items-center text-sm border-black rounded-sm"
+                  >
+                    Discord
+                    <img
+                      src="/discord.svg"
+                      height={14}
+                      width={24}
+                      className="h-3"
+                    />
+                  </a>
+                  <a
+                    href="https://twitter.com/strangemoodorg"
+                    className="flex px-2 py-1 border text-sm border-black items-center rounded-sm"
+                  >
+                    Twitter{" "}
+                    <img
+                      src="/twitter.svg"
+                      height={14}
+                      width={24}
+                      className="h-4"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

@@ -157,6 +157,16 @@ export default function Welcome() {
                 />
               </FormElement>
 
+              <FormElement label="Email">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="border-b w-full px-4 py-2 text-sm"
+                  placeholder="name@yourgame.com"
+                />
+              </FormElement>
+
               <FormElement label="Team or studio size" hint="" required>
                 <div className="px-4 py-2">
                   <select
