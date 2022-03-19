@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/solid";
 import Link from "next/link";
 import { Tag, TagGroup } from "../../components/gui";
+import { FormElement } from "../forms/waitlist";
 
 export default function Welcome() {
   return (
@@ -32,8 +33,8 @@ export default function Welcome() {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50 h-full sm:px-4 sm:pt-6 pattern">
-        <div className="max-w-4xl  mx-auto flex h-full flex-col ">
+      <div className="bg-gray-50 h-full sm:px-4 sm:pt-6 pattern flex flex-col">
+        <div className="max-w-4xl mx-auto flex  flex-col ">
           <div className="mb-2 px-2 pb-2 flex gap-4 items-center hidden sm:flex">
             <Link href={"/welcome"}>
               <a className="flex bg-white px-2 py-1 border text-sm border-black items-center rounded-sm">
@@ -47,8 +48,8 @@ export default function Welcome() {
             </div>
           </div>
 
-          <div className="rounded-t-sm sm:border-l sm:border-r border-t border-black bg-white h-full ">
-            <div className="bg-black text-white px-4 py-8 flex flex-col ">
+          <div className="rounded-t-sm sm:border-l pb-12 sm:border-r border-t border-black bg-white h-full flex-1 flex flex-col">
+            <div className="bg-black text-white px-4 py-8 flex  flex-col ">
               <h2 className="text-lg font-bold mb-1">
                 Apply to join Strangemood's beta
               </h2>
@@ -73,6 +74,21 @@ export default function Welcome() {
                       of giving 30% of your revenue to Steam, let's pick a
                       smaller number, give it to a youtuber or streamer instead,
                       and split the difference.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-4 pt-4">
+                <div className="flex items-start p-0 m-0">
+                  <CheckCircleIcon className="h-4 w-4 mr-2 top-1 relative" />{" "}
+                  <div className="flex-1">
+                    <span className="font-bold inline">
+                      You become an owner of Strangemood.
+                    </span>{" "}
+                    <div className="inline">
+                      When you sell your game, you're automatically given voting
+                      tokens on every sale by the Strangemood protocol.
                     </div>
                   </div>
                 </div>
@@ -109,7 +125,75 @@ export default function Welcome() {
               </div>
             </div>
 
-            <div className="px-4 py-4">hi</div>
+            <div className="flex flex-col flex-1">
+              <div className="bg-gray-100 w-full font-bold px-4 py-4 border-b">
+                Your information
+              </div>
+              <FormElement label="Your name" hint="" required>
+                <input
+                  type="text"
+                  className="w-full border-b px-4 text-sm py-2"
+                  placeholder="Heralt of Miva"
+                  required
+                />
+              </FormElement>
+
+              <FormElement
+                label="The name of your game"
+                hint="(Or a current working title)"
+                required
+              >
+                <input
+                  type="text"
+                  className="w-full border-b px-4 text-sm py-2"
+                  placeholder="The Pitcher 3"
+                  required
+                />
+              </FormElement>
+
+              <FormElement label="Team or studio size" hint="" required>
+                <select
+                  name="team-size"
+                  required
+                  className="border-b border-t w-full px-4 py-2"
+                >
+                  <option value="small">1-10 people</option>
+                  <option value="medium">10-50 people</option>
+                  <option value="large">50+ people</option>
+                </select>
+              </FormElement>
+
+              <FormElement
+                label="Release Timeline"
+                hint="By 'release', we mean a first purchasable version. So early access counts as a 'release'. This can just be a rough estimate, or even a wildly incorrect estimate."
+              >
+                <select
+                  name="team-size"
+                  required
+                  className="border-b border-t w-full px-4 py-2"
+                >
+                  <option value="existing-game">
+                    I can publish an existing{" "}
+                  </option>
+                  <option value="short-timeline">Within three months</option>
+                  <option value="medium-timeline">Within a year</option>
+                  <option value="long-timeline">Beyond a year from now</option>
+                </select>
+              </FormElement>
+
+              <FormElement
+                label="Details"
+                hint="Please provide any information you can about your game, your studio, or your background. Links to current marketing materials, screenshots, and videos are helpful."
+                required
+              >
+                <input
+                  type="text"
+                  className="w-full border-b px-4 text-sm py-2"
+                  placeholder="The Pitcher 3"
+                  required
+                />
+              </FormElement>
+            </div>
           </div>
         </div>
       </div>
