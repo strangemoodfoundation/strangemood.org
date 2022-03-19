@@ -75,7 +75,7 @@ export default function Layout(props: { children: any }) {
             </a>
 
             <a
-              href="/forms/waitlist"
+              href="/welcome"
               className="text-sm clear cursor-pointer border-b-2 hover:bg-blue-300 border border-blue-900 bg-blue-500 text-white text-shadow px-4 py-1 font-bold rounded"
             >
               Join
