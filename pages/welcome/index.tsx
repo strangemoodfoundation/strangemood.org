@@ -7,8 +7,14 @@ import {
 } from "@heroicons/react/solid";
 import Link from "next/link";
 import { Tag, TagGroup } from "../../components/gui";
+import { useRouter } from "next/router";
 
 export default function Welcome() {
+  const router = useRouter();
+
+  if (router.query.ref === "nfc") {
+  }
+
   return (
     <div className="h-full flex w-full flex-col ">
       <div className="bg-black p-1 ">
@@ -30,8 +36,19 @@ export default function Welcome() {
           </div>
         </div>
       </div>
+
       <div className="flex flex-col md:flex-row flex-1 h-full">
         <div className="px-4 py-8 mx-auto w-full h-full  text-gray-100 flex-1 transition-all  bg-black ">
+          {router.query.ref === "nfc" && (
+            <div className="font-mono mb-8">
+              Oh hey it's{" "}
+              <span className="text-blue-500 capitalize">
+                {router.query.name || "me"}
+              </span>
+              . Thanks for talking with me and tapping your phone against that
+              card. Welcome to Strangemood!
+            </div>
+          )}
           <h1 className="font-bold text-xl w-64 pb-2">Join Strangemood.</h1>
           <p className="pb-6">
             Strangemood is collectively controlled by the folks that use it,

@@ -9,45 +9,6 @@ import {
 } from "@heroicons/react/solid";
 import type { NextPage } from "next";
 import Link from "next/link";
-import { DarkTag, Tag, TagGroup } from "../components/gui";
-import Layout from "../components/Layout";
-
-function PrimaryLink(props: {
-  className?: string;
-  children: any;
-  href?: string;
-}) {
-  return (
-    <a
-      href={props.href}
-      target="_blank"
-      className={
-        "clear cursor-pointer border-b-2 hover:bg-blue-300 border border-blue-900 bg-blue-500 text-white text-shadow px-4 py-2 font-bold rounded " +
-          props.className || ""
-      }
-    >
-      {props.children}
-    </a>
-  );
-}
-
-function MinorLink(props: {
-  className?: string;
-  children: any;
-  href?: string;
-}) {
-  return (
-    <a
-      href={props.href}
-      className={
-        "clear  cursor-pointer border-b-2 hover:bg-blue-200 border border-gray-900 px-4 py-2 font-bold rounded " +
-          props.className || ""
-      }
-    >
-      {props.children}
-    </a>
-  );
-}
 
 const Home: NextPage = () => {
   return (
@@ -206,27 +167,35 @@ const Home: NextPage = () => {
             <div className="h-px flex-1 bg-black" />
           </div>
 
-          <div className="pb-12 flex gap-4 flex-wrap">
-            <div className="flex-1 px-2 flex  flex-col ">
-              <h2 className=" font-bold mb-1">Sellers own the marketplace.</h2>
+          <div className="pb-12 flex gap-4 flex-wrap flex-col sm:flex-row">
+            <div className="flex-1 flex  flex-col ">
+              <h2 className=" font-bold mb-1">Goverened by sellers.</h2>
               <p className="text-sm">
                 Strangemood is collectively owned by a global internet
                 co-operative. If you sell a game on Strangemood, you'll
-                automatically be given voting power over it.
+                automatically be given voting power over the co-op.
               </p>
             </div>
 
             <div className=" flex-1  flex  flex-col ">
-              <h2 className=" font-bold mb-1">Strangemood is open source.</h2>
+              <h2 className=" font-bold mb-1">Carbon Neutral.</h2>
               <p className="text-sm">
-                Strangemood is a program on Solana, the fast, carbon-neutral
-                blockchain.{" "}
+                Strangemood is built on Solana, a fast, carbon neutral
+                blockchain. Each transaction on Strangemood{" "}
                 <a
                   className="underline"
-                  href="https://github.com/strangemoodfoundation/strangemood"
+                  href="https://solana.com/news/solana-energy-usage-report-november-2021"
                 >
-                  You can find the code and client libraries here.{" "}
+                  uses about as much energy as loading this website did.
                 </a>
+              </p>
+            </div>
+
+            <div className="min-w-lg flex-1  flex  flex-col ">
+              <h2 className=" font-bold mb-1">Sustainably open source</h2>
+              <p className="text-sm">
+                Strangemood is an open source program on Solana, the fast,
+                carbon-neutral blockchain.
               </p>
             </div>
           </div>
