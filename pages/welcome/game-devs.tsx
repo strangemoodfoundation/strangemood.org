@@ -217,7 +217,13 @@ export default function Welcome() {
 
               <div className=" flex py-4 items-center">
                 <div className="h-px flex-1 w-full bg-black " />
-                <button className="border hover:opacity-80 mr-4 rounded bg-blue-500 px-4 py-2 text-white border-b-2 border-black flex items-center">
+                <button
+                  className="border hover:opacity-80 mr-4 rounded bg-blue-500 px-4 py-2 text-white border-b-2 border-black flex items-center"
+                  onClick={() => {
+                    // @ts-ignore track 'application submitted' event
+                    window.fathom.trackGoal("8MNZCWOB", 0);
+                  }}
+                >
                   Submit your application
                   <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </button>

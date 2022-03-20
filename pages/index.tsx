@@ -22,7 +22,15 @@ const Home: NextPage = () => {
           <div className="px-1">strangemood</div>
           <div className="h-px bg-white w-full flex-1" />
           <div className="px-1">
-            <a href="/welcome" target={"_blank"} className="underline flex ">
+            <a
+              href="/welcome"
+              target={"_blank"}
+              className="underline flex "
+              onClick={() => {
+                // @ts-ignore window.fathom.trackGoal('WIRAJS3K', 0);
+                window.fathom.trackGoal("WIRAJS3K", 0);
+              }}
+            >
               Join Strangemood
             </a>
           </div>
@@ -41,7 +49,13 @@ const Home: NextPage = () => {
             </p>
 
             <Link href="/about">
-              <a className="flex items-center underline">
+              <a
+                className="flex items-center underline"
+                onClick={() => {
+                  // @ts-ignore window.fathom.trackGoal('WIRAJS3K', 0);
+                  window.fathom.trackGoal("WIRAJS3K", 0);
+                }}
+              >
                 Join the Strangemood Foundation{" "}
                 <ChevronRightIcon className="h-4 w-4 mt-0.5" />
               </a>
@@ -102,7 +116,13 @@ const Home: NextPage = () => {
               </a>
             </Link>
             <Link href={"/welcome"}>
-              <a className="flex hover:bg-blue-400 bg-blue-500 text-blue-50 border-blue-700 px-2 py-1 border text-sm border-black items-center rounded-sm">
+              <a
+                className="flex hover:bg-blue-400 bg-blue-500 text-blue-50 border-blue-700 px-2 py-1 border text-sm border-black items-center rounded-sm"
+                onClick={() => {
+                  // @ts-ignore window.fathom.trackGoal('WIRAJS3K', 0);
+                  window.fathom.trackGoal("WIRAJS3K", 0);
+                }}
+              >
                 Join the Beta
               </a>
             </Link>

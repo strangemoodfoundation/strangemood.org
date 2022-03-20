@@ -118,11 +118,9 @@ export default function Welcome() {
                 </div>
               </a>
             </Link>
-
             <div className="px-8 pb-2 font-mono text-sm text-gray-700 ">
               Coming Soon
             </div>
-
             <Link href={"#"}>
               <div className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row transition-all opacity-30">
                 <div className="flex-col flex py-2">
@@ -141,7 +139,6 @@ export default function Welcome() {
                 </div>
               </div>
             </Link>
-
             <div className="px-8 pb-2 font-mono text-sm text-gray-700 ">
               Coming Soon
             </div>
