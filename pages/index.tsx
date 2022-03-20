@@ -189,7 +189,7 @@ const Home: NextPage = () => {
 
           <div className="pb-12 flex gap-4 flex-wrap flex-col sm:flex-row">
             <div className="flex-1 flex  flex-col ">
-              <h2 className=" font-bold mb-1">Goverened by sellers.</h2>
+              <h2 className=" font-bold mb-1">Governed by sellers.</h2>
               <p className="text-sm">
                 Strangemood is collectively owned by a global internet
                 co-operative. If you sell a game on Strangemood, you'll
