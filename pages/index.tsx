@@ -86,7 +86,7 @@ const Home: NextPage = () => {
               </a>
             </Link>
 
-            <Link href={"https://twitter.com/strangemoodorg"}>
+            <Link href={"https://discord.com/invite/Y2R3VBcRmA"}>
               <a className="flex hover:bg-gray-100 text-mono bg-white px-2 py-1 border text-sm border-black items-center rounded-sm">
                 Discord
                 <img
