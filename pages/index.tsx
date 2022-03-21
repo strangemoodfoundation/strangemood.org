@@ -214,8 +214,10 @@ const Home: NextPage = () => {
             <div className="min-w-lg flex-1  flex  flex-col ">
               <h2 className=" font-bold mb-1">Sustainably open source</h2>
               <p className="text-sm">
-                Strangemood is an open source program on Solana, the fast,
-                carbon-neutral blockchain.
+                A small % of every sale goes to a community treasury that's
+                controlled by the sellers. That treasury funds the open source
+                development of the platform and other public goods within the
+                game industry.
               </p>
             </div>
           </div>
