@@ -1,7 +1,4 @@
 import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  CheckCircleIcon,
   ChevronRightIcon,
   GlobeAltIcon,
   ReceiptTaxIcon,

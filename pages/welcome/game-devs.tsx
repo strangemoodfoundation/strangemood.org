@@ -137,7 +137,7 @@ export default function Welcome() {
               <FormElement label="Your name" hint="" required>
                 <input
                   type="text"
-                  className="w-full border-b px-4 text-sm py-2"
+                  className="w-full border-b px-4 text-sm py-2 border-t shadow-inner"
                   placeholder="Heralt of Miva"
                   required
                 />
@@ -150,7 +150,7 @@ export default function Welcome() {
               >
                 <input
                   type="text"
-                  className="w-full border-b px-4 text-sm py-2"
+                  className="w-full border-b px-4 text-sm py-2 border-t shadow-inner"
                   placeholder="The Pitcher 3"
                   required
                 />
@@ -161,13 +161,13 @@ export default function Welcome() {
                   type="email"
                   name="email"
                   required
-                  className="border-b w-full px-4 py-2 text-sm"
+                  className="border-b w-full px-4 py-2 text-sm border-t  shadow-inner"
                   placeholder="name@yourgame.com"
                 />
               </FormElement>
 
               <FormElement label="Team or studio size" hint="" required>
-                <div className="px-4 py-2">
+                <div className="px-4 py-2 border-t">
                   <select
                     name="team-size"
                     required
@@ -184,7 +184,7 @@ export default function Welcome() {
                 label="Release Timeline"
                 hint="By 'release', we mean a first purchasable version. So early access counts as a 'release'. This can just be a rough estimate, or even a wildly incorrect estimate."
               >
-                <div className="px-4 py-2">
+                <div className="px-4 py-2 border-t">
                   <select
                     name="release-schedule"
                     required
@@ -209,7 +209,7 @@ export default function Welcome() {
               >
                 <textarea
                   name="details"
-                  className="w-full border-b px-4 text-sm py-2 h-64"
+                  className="w-full border-b px-4 text-sm py-2 h-64 shadow-inner border-t"
                   placeholder="Here's a link to our website and twitter page..."
                   required
                 />
