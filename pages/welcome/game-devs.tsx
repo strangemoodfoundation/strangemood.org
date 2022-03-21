@@ -140,6 +140,7 @@ export default function Welcome() {
                   className="w-full border-b px-4 text-sm py-2 border-t shadow-inner"
                   placeholder="Heralt of Miva"
                   required
+                  autoFocus
                 />
               </FormElement>
 
