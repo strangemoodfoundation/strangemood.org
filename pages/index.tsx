@@ -45,7 +45,7 @@ const Home: NextPage = () => {
               It's an open source competitor to Steam.
             </p>
 
-            <Link href="/about">
+            <Link href="/welcome">
               <a
                 className="flex items-center underline"
                 onClick={() => {
