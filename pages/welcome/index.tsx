@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout";
 import {
+  ArrowRightIcon,
   CalculatorIcon,
   LibraryIcon,
   LightningBoltIcon,
@@ -102,68 +103,70 @@ export default function Welcome() {
             build a new game industry with us.
           </p>
           <div className="flex flex-col">
-            <Link href={"/welcome/game-devs"}>
-              <a className="border-t mx-4 border-l border-r rounded-sm mb-8 border-b-2 border-black px-4  py-2 text-left flex flex-row hover:border-blue-700 hover:text-blue-700">
-                <div className="flex-col flex py-2">
-                  <div className="font-bold pb-2 text-lg">I make games</div>
-                  <div className="text-sm text-gray-600">
-                    Game developers automatically earn votes over the foundation
-                    every time they make a sale.
-                  </div>
-                  <TagGroup>
-                    <Tag>Sell more games</Tag>
-                    <Tag>Pay less in fees</Tag>
-                    <Tag>Own the game store</Tag>
-                  </TagGroup>
+            <div className="mx-4 rounded-sm mb-8   py-2 text-left flex flex-row ">
+              <div className="flex-col flex py-2">
+                <div className="font-bold pb-2 text-lg">I make games</div>
+                <div className="text-sm text-gray-600">
+                  Game developers automatically earn votes over the foundation
+                  every time they make a sale.
                 </div>
-              </a>
-            </Link>
-            <div className="px-8 pb-2 font-mono text-sm text-gray-700 ">
-              Coming Soon
-            </div>
-            <Link href={"#"}>
-              <div className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row transition-all opacity-30">
-                <div className="flex-col flex py-2">
-                  <div className="font-bold pb-2 text-lg ">
-                    I want to sell other folks' games to my audience
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    Strangemood lets anyone make a store and collect commissions
-                    set by game developers.
-                  </div>
+                <TagGroup>
+                  <Tag>Sell more games</Tag>
+                  <Tag>Pay less in fees</Tag>
+                  <Tag>Own the game store</Tag>
+                </TagGroup>
 
-                  <TagGroup>
-                    <Tag>Make a % of game sales</Tag>
-                    <Tag>Make more than ads or sponsorships</Tag>
-                  </TagGroup>
-                </div>
+                <Link href={"/welcome/game-devs"}>
+                  <a className="text-base py-2 px-2 border border-b-2 border-black rounded mt-4 justify-between flex items-center hover:bg-blue-50">
+                    Join as a game developer{" "}
+                    <ArrowRightIcon className="h-4 w-4" />
+                  </a>
+                </Link>
               </div>
-            </Link>
-            <div className="px-8 pb-2 font-mono text-sm text-gray-700 ">
-              Coming Soon
             </div>
-            <Link href={"#"}>
-              <div className="border-t mx-4 border-l border-r rounded-sm border-b-2 border-black px-4 mb-8 py-2 text-left flex flex-row opacity-30">
-                <div className="flex-col flex py-2">
-                  <div className="font-bold pb-2 text-lg ">
-                    I hack on open source
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    Open source developers that contribute to the ecosystem can
-                    earn voting stake in the protocol and get paid for their
-                    work.
-                  </div>
 
-                  <TagGroup>
-                    <Tag>Get paid</Tag>
-                    <Tag>Earn voting stake</Tag>
-                    <Tag>Rust & TypeScript</Tag>
-                  </TagGroup>
+            <div className="mx-4 rounded-sm mb-8 py-2 text-left flex flex-row  opacity-50 ">
+              <div className="flex-col flex py-2">
+                <div className=" pb-2 font-mono text-sm text-gray-700 ">
+                  Coming Soon
                 </div>
+                <div className="font-bold pb-2 text-lg ">
+                  I want to sell other folks' games to my audience
+                </div>
+                <div className="text-sm text-gray-600">
+                  Strangemood lets anyone make a store and collect commissions
+                  set by game developers.
+                </div>
+
+                <TagGroup>
+                  <Tag>Make a % of game sales</Tag>
+                  <Tag>Make more than ads or sponsorships</Tag>
+                </TagGroup>
               </div>
-            </Link>
+            </div>
+
+            <div className="mx-4 rounded-sm mb-8    py-2 text-left flex flex-row  opacity-50 ">
+              <div className="flex-col flex py-2">
+                <div className=" pb-2 font-mono text-sm text-gray-700 ">
+                  Coming Soon
+                </div>
+                <div className="font-bold pb-2 text-lg ">
+                  I hack on open source
+                </div>
+                <div className="text-sm text-gray-600">
+                  Open source developers that contribute to the ecosystem can
+                  earn voting stake in the protocol and get paid for their work.
+                </div>
+
+                <TagGroup>
+                  <Tag>Get paid</Tag>
+                  <Tag>Earn voting stake</Tag>
+                  <Tag>Rust & TypeScript</Tag>
+                </TagGroup>
+              </div>
+            </div>
           </div>
-          <div className="px-8 pb-12  h-full flex-1 text-sm inline">
+          <div className="px-4 pb-12  h-full flex-1 text-sm inline">
             <div className="font-bold pb-1">Are none of these you? </div>{" "}
             <div>
               There's many other ways to partner with the Strangemood
