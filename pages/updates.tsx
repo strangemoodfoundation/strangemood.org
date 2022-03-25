@@ -72,7 +72,6 @@ export default function Updates() {
                   name="details"
                   className="w-full border-b px-4 text-sm py-2 h-64 shadow-inner border-t"
                   placeholder="Oh hi, I'm so and so and I make xyz. Please send me emails xyz-related things."
-                  required
                 />
               </FormElement>
 
