@@ -1,6 +1,7 @@
 import {
   ChevronRightIcon,
   GlobeAltIcon,
+  MailIcon,
   ReceiptTaxIcon,
   ScaleIcon,
 } from "@heroicons/react/solid";
@@ -80,6 +81,13 @@ const Home: NextPage = () => {
                   width={24}
                   className="h-3"
                 />
+              </a>
+            </Link>
+
+            <Link href={"/updates"}>
+              <a className="flex hover:bg-gray-100 text-mono bg-white px-2 py-1 border text-sm border-black items-center rounded-sm">
+                Email Updates
+                <MailIcon className="h-3 ml-2" />
               </a>
             </Link>
 
