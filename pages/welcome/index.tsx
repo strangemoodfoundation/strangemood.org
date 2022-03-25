@@ -174,18 +174,6 @@ export default function Welcome() {
             </div>
             <div className="flex py-2 mt-2 gap-2">
               <a
-                href="https://discord.com/invite/Y2R3VBcRmA"
-                className="flex px-2 py-1 border items-center text-sm border-black rounded-sm"
-              >
-                Discord
-                <img
-                  src="/discord.svg"
-                  height={14}
-                  width={24}
-                  className="h-3"
-                />
-              </a>
-              <a
                 href="https://twitter.com/strangemoodorg"
                 className="flex px-2 py-1 border text-sm border-black items-center rounded-sm"
               >

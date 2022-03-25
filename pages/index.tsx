@@ -83,18 +83,6 @@ const Home: NextPage = () => {
               </a>
             </Link>
 
-            <Link href={"https://discord.com/invite/Y2R3VBcRmA"}>
-              <a className="flex hover:bg-gray-100 text-mono bg-white px-2 py-1 border text-sm border-black items-center rounded-sm">
-                Discord
-                <img
-                  src="/discord.svg"
-                  height={14}
-                  width={24}
-                  className="h-3"
-                />
-              </a>
-            </Link>
-
             <Link href={"https://docs.strangemood.org"}>
               <a className="flex hover:bg-gray-100 bg-white px-2 py-1 border text-sm border-black items-center rounded-sm">
                 Docs
@@ -197,14 +185,8 @@ const Home: NextPage = () => {
             <div className=" flex-1  flex  flex-col ">
               <h2 className=" font-bold mb-1">Carbon Neutral.</h2>
               <p className="text-sm">
-                Strangemood is built on Solana, a fast, carbon neutral
-                blockchain. Each transaction on Strangemood{" "}
-                <a
-                  className="underline"
-                  href="https://solana.com/news/solana-energy-usage-report-november-2021"
-                >
-                  uses about as much energy as loading this website did.
-                </a>
+                Each transaction on Strangemood uses about as much energy as
+                loading this website did.
               </p>
             </div>
 
