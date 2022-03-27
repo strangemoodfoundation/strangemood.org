@@ -57,7 +57,7 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
             src="/sun.svg"
             className="h-4 w-4 mr-1 dark:bg-gray-500 bg-white"
           />
-          <a className="px-1" href="/">
+          <a className="px-1 underline" href="/">
             strangemood
           </a>
           <div className="h-px bg-white w-full flex-1" />

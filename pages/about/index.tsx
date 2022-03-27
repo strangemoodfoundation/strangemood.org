@@ -90,7 +90,32 @@ export default function Index(props: {
   }, [ref]);
 
   return (
-    <Layout>
+    <div className="flex flex-col w-full">
+      <div className="bg-black p-1 py-2 w-full">
+        <div className="text-xs font-mono flex items-center text-gray-100 ">
+          <img
+            src="/sun.svg"
+            className="h-4 w-4 mr-1 dark:bg-gray-500 bg-white"
+          />
+          <a className="px-1 underline" href="/">
+            strangemood
+          </a>
+          <div className="h-px bg-white w-full flex-1" />
+          <div className="px-1">
+            <a
+              href="/welcome"
+              target={"_blank"}
+              className="underline flex "
+              onClick={() => {
+                // @ts-ignore window.fathom.trackGoal('WIRAJS3K', 0);
+                window.fathom.trackGoal("WIRAJS3K", 0);
+              }}
+            >
+              Join Strangemood
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="flex w-full">
         <div className="p-4 bg-black text-white md:flex hidden">
           <nav>
@@ -116,8 +141,8 @@ export default function Index(props: {
           </nav>
         </div>
         <div className="flex flex-col w-full">
-          <div className="bg-gray-100 rounded ">
-            <div className="max-w-3xl mx-4 mx-auto w-full text-sm border-l border-r flex items-center bg-gray-50 pr-4">
+          <div className="bg-gray-100 rounded px-4">
+            <div className="max-w-3xl mx-auto w-full text-sm border-l border-r flex items-center bg-gray-50 pr-4">
               <input
                 placeholder="Search the FAQ"
                 className="py-2  px-4 mr-4 w-full bg-gray-50"
@@ -189,7 +214,7 @@ export default function Index(props: {
           </article>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 }
 
