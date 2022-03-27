@@ -5,12 +5,9 @@ import { serialize } from "next-mdx-remote/serialize";
 
 import Head from "next/head";
 import path from "path";
-import remarkFootnotes from "remark-footnotes";
 import remarkGfm from "remark-gfm";
-import remarkHtml from "remark-html";
-
-import Layout from "../../components/Layout";
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import { getFAQBySlug } from "../../lib/faq";
+import { FAQ_PATH, postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -25,7 +22,13 @@ const components = {
   Head,
 };
 
-export default function PostPage({ source, frontMatter }: any) {
+export default function PostPage({ source, frontMatter, faqs }: any) {
+  const fs = faqs.map((f: any) => ({
+    question: f.frontMatter.question,
+    slug: f.slug,
+    source: f.source,
+  }));
+
   return (
     <div className="flex flex-col w-full">
       <div className="bg-black p-1 py-2 w-full">
@@ -53,19 +56,65 @@ export default function PostPage({ source, frontMatter }: any) {
       </div>
 
       <div className="pattern flex">
-        <div className="max-w-3xl bg-white border-l-0 border-r-0 sm:border  border-black w-full m-auto sm:mt-12 mb-12">
-          <div className="bg-black text-white px-4 py-8 flex  flex-col ">
-            <h1 className="text-lg font-bold mb-1">{frontMatter.title}</h1>
-            <p className="m-0 text-sm text-gray-400">{frontMatter.tagline}</p>
-          </div>
+        <div className="m-auto flex px-4">
+          <div className="max-w-3xl bg-white border-l-0 border-r-0 sm:border  border-black w-full sm:mt-12 mb-12">
+            <div className="bg-black text-white px-4 py-8 flex  flex-col ">
+              <h1 className="text-lg font-bold mb-1">{frontMatter.title}</h1>
+              <p className="m-0 text-sm text-gray-400">{frontMatter.tagline}</p>
+            </div>
 
-          <article className="px-4 py-4 text-gray-900">
-            <MDXRemote {...source} components={components} />
-          </article>
+            <article className="px-4 py-4 text-gray-900">
+              <MDXRemote {...source} components={components} />
+            </article>
+          </div>
+          <div className="lg:flex hidden mt-48 mb-12 ml-4 text-gray-600 flex-col w-64 text-xs">
+            <div className="font-bold mb-4">Related FAQs</div>
+            {fs.map((f: any) => (
+              <div key={f.slug} className="mb-2">
+                <a
+                  className="underline capitalize font-bold pb-1 flex"
+                  href={`/about#${f.slug}`}
+                >
+                  {f.question}
+                </a>
+                <div>
+                  <MDXRemote {...f.source} components={components} />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
+}
+
+async function getFAQ(slug: string) {
+  const filePath = path.join(FAQ_PATH, `${slug}.mdx`);
+  const source = fs.readFileSync(filePath);
+
+  try {
+    const { content, data } = matter(source);
+
+    const mdxSource = await serialize(content, {
+      // Optionally pass remark/rehype plugins
+      mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: [],
+      },
+      scope: data,
+    });
+
+    return {
+      source: mdxSource,
+      frontMatter: data,
+      content: content,
+      slug: slug,
+    };
+  } catch (e) {
+    console.error("Error loading post: " + slug);
+    throw e;
+  }
 }
 
 export const getStaticProps = async ({ params }: any) => {
@@ -73,6 +122,12 @@ export const getStaticProps = async ({ params }: any) => {
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
+
+  const faqs = await Promise.all(
+    (data.faq || []).map(async (slug: any) => {
+      return await getFAQ(slug);
+    })
+  );
 
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
@@ -87,6 +142,7 @@ export const getStaticProps = async ({ params }: any) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      faqs,
     },
   };
 };
