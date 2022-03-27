@@ -5,6 +5,10 @@ import { serialize } from "next-mdx-remote/serialize";
 
 import Head from "next/head";
 import path from "path";
+import remarkFootnotes from "remark-footnotes";
+import remarkGfm from "remark-gfm";
+import remarkHtml from "remark-html";
+
 import Layout from "../../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
@@ -23,14 +27,44 @@ const components = {
 
 export default function PostPage({ source, frontMatter }: any) {
   return (
-    <Layout>
-      <div></div>
+    <div className="flex flex-col w-full">
+      <div className="bg-black p-1 py-2 w-full">
+        <div className="text-xs font-mono flex items-center text-gray-100 ">
+          <img
+            src="/sun.svg"
+            className="h-4 w-4 mr-1 dark:bg-gray-500 bg-white"
+          />
+          <div className="px-1">strangemood</div>
+          <div className="h-px bg-white w-full flex-1" />
+          <div className="px-1">
+            <a
+              href="/welcome"
+              target={"_blank"}
+              className="underline flex "
+              onClick={() => {
+                // @ts-ignore window.fathom.trackGoal('WIRAJS3K', 0);
+                window.fathom.trackGoal("WIRAJS3K", 0);
+              }}
+            >
+              Join Strangemood
+            </a>
+          </div>
+        </div>
+      </div>
 
-      <article className="max-w-3xl m-auto px-4 mt-12 mb-12">
-        <h1 className="text-2xl pb-2 mb-4 border-b">{frontMatter.title}</h1>
-        <MDXRemote {...source} components={components} />
-      </article>
-    </Layout>
+      <div className="pattern flex">
+        <div className="max-w-3xl bg-white border-l-0 border-r-0 sm:border  border-black w-full m-auto sm:mt-12 mb-12">
+          <div className="bg-black text-white px-4 py-8 flex  flex-col ">
+            <h1 className="text-lg font-bold mb-1">{frontMatter.title}</h1>
+            <p className="m-0 text-sm text-gray-400">{frontMatter.tagline}</p>
+          </div>
+
+          <article className="px-4 py-4 text-gray-900">
+            <MDXRemote {...source} components={components} />
+          </article>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -43,7 +77,7 @@ export const getStaticProps = async ({ params }: any) => {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [],
     },
     scope: data,

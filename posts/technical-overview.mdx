@@ -1,0 +1,26 @@
+---
+title: "A technical overview of Strangemood"
+tagline: "aka: Strangemood's one-pager"
+---
+
+Strangemood is implemented as [an open source program](https://github.com/strangemoodfoundation/strangemood) on the [Solana](https://solana.com/) blockchain. [^other-implementations] Anyone can build a marketplace or client using the Strangemood protocol. It doesn’t matter which client application you buy the license from, it will still appear in your “library”.
+
+When a seller lists software for sale, the program creates a unique SPL[^whats-spl] token mint and assigns the authority to the Strangemood program. Upon purchase, the buyer is minted one or more tokens from that mint. The seller can then verify, within the software itself, that the user owns the token by requesting they sign an arbitrary string with their wallet. Listing tokens are automatically frozen upon purchase, making them non-transferable (sometimes called "soulbound").
+
+A user can buy an arbitrary number of listing tokens, and seller's software can determine how many tokens are needed for access. If a listing is marked as “consumable”, then these tokens may be burned by the authority of the listing. This allows a seller to implement arbitrary business models, such as subscriptions, in-app purchases, pay-to-upgrade, usage-based pricing, or traditional one time purchases.
+
+If the seller allows it, a listing may be refundable, until the seller determines "finalizes" the sale. This allows a seller to offer usage-based (refundable until level 20) or time-based (refundable for the first 2 hours of usage) trials.
+
+Listings on Strangemood belong to a governance. The governance's role is to pay for off-chain services needed for a healthy marketplace, such as IP protection, storage, continuous development of client libraries, or anything else the sellers would like. Each governance declares a mint for its governance token, and then surrenders authority of the mint to the Strangemood program. Upon purchase, Strangemood mints governance tokens to the seller, and deposits a portion of the sale into a governance-owned token account.
+
+If sellers are unhappy with their governance, they can migrate their listings to a different governance by calling a single function. So, Strangemood is "forkable" without a code change. Because anyone can compete to "run" the marketplace, it ensures Strangemood itself never becomes a rent-seeker, even in the case of a Sybil attack. Sellers may even choose to define an "in-group" and programatically migrate their listings if anyone outside the "in-group" controls more than 50% of the token share.
+
+When a seller creates a listing, they can put a portion of the sale up as a "bounty" by a marketplace client (referred to as the "cashier"). For example, if a seller sold a listing for $30, and put a 10% bounty, then the cashier would collect about $3 [^why-about].
+
+However, marketplaces must conform to any rules of the governance, such as protecting the IP of the sellers. To enforce this, Strangemood uses staking. When a cashier earns a bounty, it initially goes into an escrow. To withdraw from the escrow, the seller must put a number of governance tokens into a deposit. Then, a cashier is allowed to withdraw from the escrow at a time period configurable by the governance. The amount they are allowed to withdraw per time period is determined by how much the have staked. For example, if the governance has set the time period to be 1 week, and the cashier has staked the equivalent of $100, then the cashier may withdraw $100 from their escrow per week, or $400 per month. For every currency, the governance can set a scalar value that determines how much the governance token is "worth" for staking purposes. If the cashier breaks the rules of the governance, their stake may be burned. This model ensures that the amount staked scales with the amount earned, unlike other systems which require large sums to begin.
+
+To learn more about Strangemood, see its code [on Github](https://github.com/strangemoodfoundation/strangemood/blob/main/strangemood/programs/strangemood/src/lib.rs), or read [the FAQ](/about).
+
+[^other-implementations]: **Other Implementations** - It may be possible to interact with Strangemood through a variety of other chains, via bridges such as Wormhole. It may also be possible to implement native versions of Strangemood on other chains, such as Ethereum. So long as each implementation respects the purchases and governances created in the initial representation, with the same rules, then that implementation is also Strangemood. In other words, Strangemood is a protocol, and not necessarily bound by any individual implementation. If one were to redeploy the reference Strangemood program with a new public key, that would still be Strangemood. However in practice, this is unnecessary.
+[^whats-spl]: **Whats SPL?** SPL is the Solana Program Library. It's the "standard library" of Solana.
+[^why-about]: **Why about $3?** The total paid to the marketplace is (price - contribution_to_governance) \* bounty.
