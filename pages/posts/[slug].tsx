@@ -29,6 +29,26 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
     source: f.source,
   }));
 
+  const faqChunk = (
+    <>
+      {" "}
+      <div className="font-bold mb-4">Related FAQs</div>
+      {fs.map((f: any) => (
+        <div key={f.slug} className="mb-2">
+          <a
+            className="underline capitalize font-bold pb-1 flex"
+            href={`/about#${f.slug}`}
+          >
+            {f.question}
+          </a>
+          <div>
+            <MDXRemote {...f.source} components={components} />
+          </div>
+        </div>
+      ))}
+    </>
+  );
+
   return (
     <div className="flex flex-col w-full">
       <div className="bg-black p-1 py-2 w-full">
@@ -37,7 +57,9 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
             src="/sun.svg"
             className="h-4 w-4 mr-1 dark:bg-gray-500 bg-white"
           />
-          <div className="px-1">strangemood</div>
+          <a className="px-1" href="/">
+            strangemood
+          </a>
           <div className="h-px bg-white w-full flex-1" />
           <div className="px-1">
             <a
@@ -55,9 +77,9 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
         </div>
       </div>
 
-      <div className="pattern flex">
-        <div className="m-auto flex px-4">
-          <div className="max-w-3xl bg-white border-l-0 border-r-0 sm:border  border-black w-full sm:mt-12 mb-12">
+      <div className="pattern flex flex-col">
+        <div className="m-auto flex sm:px-4">
+          <div className="max-w-3xl bg-white border-l-0 border-r-0 border-b sm:border  border-black w-full sm:mt-12 mb-12">
             <div className="bg-black text-white px-4 py-8 flex  flex-col ">
               <h1 className="text-lg font-bold mb-1">{frontMatter.title}</h1>
               <p className="m-0 text-sm text-gray-400">{frontMatter.tagline}</p>
@@ -68,21 +90,11 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
             </article>
           </div>
           <div className="lg:flex hidden mt-48 mb-12 ml-4 text-gray-600 flex-col w-64 text-xs">
-            <div className="font-bold mb-4">Related FAQs</div>
-            {fs.map((f: any) => (
-              <div key={f.slug} className="mb-2">
-                <a
-                  className="underline capitalize font-bold pb-1 flex"
-                  href={`/about#${f.slug}`}
-                >
-                  {f.question}
-                </a>
-                <div>
-                  <MDXRemote {...f.source} components={components} />
-                </div>
-              </div>
-            ))}
+            {faqChunk}
           </div>
+        </div>
+        <div className="lg:hidden flex flex-col text-xs sm:px-12 px-4 pb-12">
+          {faqChunk}
         </div>
       </div>
     </div>
