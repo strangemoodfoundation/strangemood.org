@@ -81,3 +81,7 @@ article .footnotes {
 article .footnotes ol li {
   @apply pb-2;
 }
+
+article ul {
+  @apply list-disc pl-4 pb-2;
+}

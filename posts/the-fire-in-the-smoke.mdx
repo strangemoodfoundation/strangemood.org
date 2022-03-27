@@ -1,0 +1,51 @@
+---
+title: "The fire in the smoke"
+tagline: ""
+---
+
+Albert Ni, [in a talk in 2019](https://www.youtube.com/watch?v=QndfwZF8YeY), compared views on Ethereum to blind scientists studying an elephant. The first one touches its tusk and says "it's an elephant!", the next touches its belly and says "it's a wall!", another touches its trunk and says "it's a snake!". None see the elephant.
+
+This post is about our view on the elephant while building Strangemood, a decentralized game store. Strangemood's goal is to provide more sales for lower fees to game developers. To learn more about Strangemood, you can read [What Is Strangemood](/posts/what-is-strangemood), [A Technical Overview of Strangemood](/posts/technical-overview), or just read through [the FAQ](/about).
+
+But because many folks' view of the elephant differ singificantly from ours, it's useful to clarify what Strangemood is _not_:
+
+- Strangemood is not an NFT project.
+- Strangemood is not a "play to earn gaming" project.
+- Strangemood does not use proof-of-work, and so is carbon neutral.
+- Strangemood is not a ponzi scheme, scam, or method of breaking common laws.
+
+Criticism of these views are warranted, and have [been widely](https://web3isgoinggreat.com/) [discussed](https://www.mollywhite.net/annotations/latecomers-guide-to-crypto#). I would ask that, as you learn about Strangemood, you build your view from first principles, and not from comparisons to what other's have done.
+
+Strangemood's primary purpose is to make money for game developers and those who would provide distribution for game developers. It's to remove Steam's monopoly over the PC game industry. If you look at Strangemood through the view of a trading window, your understanding will be clouded by the smoke of the candlestick graph.
+
+With that said, the following is our perspective on the elephant.
+
+---
+
+## Service as an Asset
+
+Imagine a world in which you could only rent a car as a service. Every car came from Ford and every car was repaired and fueled by Ford. You come along and create a new type of product: a car store. Critics approach you and say: "Who will maintain the car? Where will you buy the fuel? Surely you can't compete with the efficiency and long-earned trust of Ford!" Some folks hop onto your idea, and start selling pink slips, and convincing their customers that "just-you-wait till we build the car! Your pink slip will be worth so much more then!" But many of these folks never build the car, disappear once all the pink slips have been sold. Investors pile in; if there's smoke, there must be fire! The critic returns and says "see, you can't make a car that you can _buy_, all of this is just scams and speculation. All smoke! No fire." The critic is right about the pink slips, but is wrong about the car store.
+
+Turning a service into an asset is still a good idea. In software, many services are monopolies over their own product. Their code is closed source and they frequently rely on strategies that discourage competitors, like network effects or trusted brands. Without competitors, they can over-charge you while under-delivering.
+
+This is Steam's current position. Beacuse Steam is already installed on the computers of nearly every person who plays video games, a game developer publishing on PC _must_ publish on Steam. That position lets Steam charge 25% to 30% of every sale, an enormous take for an industry who's margins are already squeezed.
+
+Strangemood's goal is to create a marketplace for video games that's owned, as an asset, by the sellers. The point is not to restrict the supply of the asset and speculate on its future value. It's that, if done correctly, owning the marketplace is cheaper than renting it from a monpoloy that can charge you unreasonable prices. It's no different than a housing market. It is cheaper to buy a house when there is an abundant supply of housing than it is to rent when there are only a few landlords.
+
+To turn a _service_ into an asset, the maintenance and operation of the product must be decentralized. If you can only fuel your car at Ford, then Ford is the true owner of your car. But if _anyone_ can fuel your car; _anyone_ can repair your car, then you own your car. The mark of an asset is one in which, if the original creators were to disappear, you would still be able to use it.
+
+So, Strangemood cannot store the listings on a database controlled by the Strangemood creators. Strangemood cannot transfer money on servers run by the Strangemood creators. Strangemood cannot store games on hard-drives owned by the Strangemood creators. If we did, then we aren't building an asset, we're once again building a service.
+
+Thus, Strangemood _must_ use a decentralized financial system, like a blockchain. Strangemood is not "Steam, but crypto"; it's "Steam, but owned by the game developers". And that can't be accomplished if you must rely on a centralized party to run every transaction. By using Solana, we let the validator nodes run the sale at near-0 prices.
+
+Strangemood _must_ store game files and marketplace data (like screenshots, titles, and descriptions) on decentralized storage, like [IPFS](https://ipfs.io/). IPFS let's multiple parties host copies of the file behind a single ID. Instead of saying the file lives at "https://strangemood.org/coolgame.zip", you can say it lives at `QmPeyiRo5BBSzv9zGpxQoK5dJg4bbzpzrvSt2LPfTWZw75` and the IPFS protocol will return a copy from one of the peers.
+
+However, Steam's offering isn't just "list your games here and we'll store them and handle transactions". It's "list your games here and lots of folks will see it." In other words, Strangmeood must also decentralize distribution.
+
+And that's probably the fire in the smoke. Because Strangemood puts listings on a blockchain and puts files on IPFS, anyone can build and run their _own_ marketplace website. Similarly, anyone can create a tool that allows a seller to list their games on Solana and IPFS.
+
+To ensure that folks do this, Strangemood allows sellers to offer a percentage of the sale as a comission that's collected by the marketplace. This let's anyone with an existing audience sell games directly. Or in other words, let every youtuber and streamer have a store; let Kotaku, IGN, the Escapist, and RockPaperShotgun have a store; let Netflix, Crunchyroll, Spotify, Amazon, Google, and Facebook have a store. Let existing or future Steam competitors join the network and games that would have not published on their store before. Let folks offer their traffic on an open market and compete to give game developers the best deal. Or in other words, allow anyone to operate the marketplace.
+
+If we're right, then Steam has no easy way to compete. They could reduce their fees, but doing so would likely cause them to lay off quite a few people, and so the decision would be likely be resisted by Valve insiders. They could raise money, then temporarily reduce prices in an attempt to "starve" Strangemood, but this would fail _because_ Strangemood is an asset. Even if the creators of Strangemood left, Strangemood would continue to exist for eternity. So that leaves them with two options: shrink forever (which brings down prices for game developers) or pivot into a different market. A good option for them would be to invest more in the Steam Deck, control the hardware, and ensure Steam is the only marketplace allowed on the console.
+
+That frees up the PC market for Strangemood, ensuring that PC game devs always pay a fair price, forever.
