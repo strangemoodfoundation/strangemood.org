@@ -67,7 +67,7 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
               <MDXRemote {...source} components={components} />
             </article>
           </div>
-          <div className="lg:flex hidden mt-12 mb-12 ml-4 text-gray-600 flex-col w-64 text-xs">
+          <div className="lg:flex hidden mt-48 mb-12 ml-4 text-gray-600 flex-col w-64 text-xs">
             <div className="font-bold mb-4">Related FAQs</div>
             {fs.map((f: any) => (
               <div key={f.slug} className="mb-2">
