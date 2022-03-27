@@ -89,13 +89,17 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
               <MDXRemote {...source} components={components} />
             </article>
           </div>
-          <div className="lg:flex hidden mt-48 mb-12 ml-4 text-gray-600 flex-col w-64 text-xs">
+          {fs.length > 0 && (
+            <div className="lg:flex hidden mt-48 mb-12 ml-4 text-gray-600 flex-col w-64 text-xs">
+              {faqChunk}
+            </div>
+          )}
+        </div>
+        {fs.length > 0 && (
+          <div className="lg:hidden flex flex-col text-xs sm:px-12 px-4 pb-12 text-gray-600 ">
             {faqChunk}
           </div>
-        </div>
-        <div className="lg:hidden flex flex-col text-xs sm:px-12 px-4 pb-12 text-gray-600 ">
-          {faqChunk}
-        </div>
+        )}
       </div>
     </div>
   );

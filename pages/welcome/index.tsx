@@ -166,7 +166,7 @@ export default function Welcome() {
               </div>
             </div>
           </div>
-          <div className="px-4 pb-12  h-full flex-1 text-sm inline">
+          <div className="px-4 pb-4  h-full flex-1 text-sm inline">
             <div className="font-bold pb-1">Are none of these you? </div>{" "}
             <div>
               There's many other ways to partner with the Strangemood
