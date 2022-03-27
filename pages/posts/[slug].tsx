@@ -93,7 +93,7 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
             {faqChunk}
           </div>
         </div>
-        <div className="lg:hidden flex flex-col text-xs sm:px-12 px-4 pb-12">
+        <div className="lg:hidden flex flex-col text-xs sm:px-12 px-4 pb-12 text-gray-600 ">
           {faqChunk}
         </div>
       </div>
