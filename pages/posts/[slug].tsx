@@ -85,6 +85,33 @@ export default function PostPage({ source, frontMatter, faqs }: any) {
               <p className="m-0 text-sm text-gray-400">{frontMatter.tagline}</p>
             </div>
 
+            <Head>
+              {/* Twitter */}
+              <meta name="twitter:card" content="summary" key="twcard" />
+              <meta
+                name="twitter:creator"
+                content={"strangemoodorg"}
+                key="twhandle"
+              />
+
+              {/* Open Graph */}
+              <meta
+                property="og:site_name"
+                content={"Strangemood"}
+                key="ogsitename"
+              />
+              <meta
+                property="og:title"
+                content={frontMatter.title}
+                key="ogtitle"
+              />
+              <meta
+                property="og:description"
+                content={frontMatter.tagline}
+                key="ogdesc"
+              />
+            </Head>
+
             <article className="px-4 py-4 text-gray-900">
               <MDXRemote {...source} components={components} />
             </article>
