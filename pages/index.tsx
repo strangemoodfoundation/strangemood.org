@@ -91,11 +91,11 @@ const Home: NextPage = () => {
               </a>
             </Link>
 
-            <Link href={"https://docs.strangemood.org"}>
+            {/* <Link href={"https://docs.strangemood.org"}>
               <a className="flex hover:bg-gray-100 bg-white px-2 py-1 border text-sm border-black items-center rounded-sm">
                 Docs
               </a>
-            </Link>
+            </Link> */}
 
             <Link href={"/about"}>
               <a className="flex hover:bg-gray-100 bg-white px-2 py-1 border text-sm border-black items-center rounded-sm">
